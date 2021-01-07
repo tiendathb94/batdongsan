@@ -99,7 +99,7 @@ class AuthController extends Controller
     {
 
         $credentials = $request->only('email', 'password');
-
+        $credentials['active'] = 1;
         if (Auth::attempt($credentials)) {
             Auth::guard('api')->attempt($credentials);
             return redirect()->route('home');

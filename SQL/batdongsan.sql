@@ -1048,7 +1048,7 @@ INSERT INTO `permissions` (`id`, `role_id`, `route`, `created_at`, `updated_at`)
 --
 
 CREATE TABLE `posts` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `form` tinyint(4) NOT NULL,
@@ -1064,15 +1064,17 @@ CREATE TABLE `posts` (
   `number_of_toilet` int(11) DEFAULT NULL,
   `furniture` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `legal_information` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `project_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `total_area` double UNSIGNED DEFAULT NULL,
-  `category_id` bigint(20) UNSIGNED NOT NULL,
-  `price` double UNSIGNED DEFAULT NULL,
-  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `project_id` bigint(20) unsigned DEFAULT NULL,
+  `total_area` double unsigned DEFAULT NULL,
+  `category_id` bigint(20) unsigned NOT NULL,
+  `price` double unsigned DEFAULT NULL,
+  `user_id` bigint(20) unsigned NOT NULL,
   `total_price` int(11) DEFAULT NULL,
+  `approval` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `posts`
@@ -1355,7 +1357,7 @@ CREATE TABLE `tag_usage` (
 --
 
 CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -1363,6 +1365,7 @@ CREATE TABLE `users` (
   `gender` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tax` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `active` int(11) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -1381,8 +1384,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `email_verified_at`, `fullname`, `password`, `gender`, `type`, `tax`, `remember_token`, `created_at`, `updated_at`, `provider`, `provider_id`, `phone`, `date_of_birth`, `avatar`, `facebook`, `skype`, `zalo`, `viber`) VALUES
-(1, 'admin@gmail.com', '2020-03-23 07:35:38', 'I\'m super admin', '$2y$10$fULKqNDdvWcenSgzcRedR.bcv5CJWMsyv03hYiBqyU0ES8.e94kf2', '1', '1', '123456789', NULL, '2020-03-23 07:35:38', '2020-03-23 07:35:38', NULL, NULL, '0123456789', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `email`, `email_verified_at`, `fullname`, `password`, `gender`, `type`, `tax`, `remember_token`, `created_at`, `updated_at`, `provider`, `provider_id`, `phone`, `date_of_birth`, `avatar`, `facebook`, `skype`, `zalo`, `viber`,`active`) VALUES
+(1, 'admin@gmail.com', '2020-03-23 07:35:38', 'I\'m super admin', '$2y$10$fULKqNDdvWcenSgzcRedR.bcv5CJWMsyv03hYiBqyU0ES8.e94kf2', '1', '1', '123456789', NULL, '2020-03-23 07:35:38', '2020-03-23 07:35:38', NULL, NULL, '0123456789', NULL, NULL, NULL, NULL, NULL, NULL,1);
 
 -- --------------------------------------------------------
 
