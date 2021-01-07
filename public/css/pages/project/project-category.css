@@ -1,0 +1,14 @@
+.project-category-container .block-title {
+  text-align: left;
+  margin-bottom: 2px;
+}
+
+.project-category-container .block-title h4 {
+  padding-left: 0;
+}
+
+.project-category-container .block-title:before {
+  top: unset;
+  bottom: 10px;
+}
+

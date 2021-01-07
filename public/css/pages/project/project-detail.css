@@ -1,0 +1,212 @@
+.page-project-detail-container h1 {
+  font-size: 3.3rem;
+  color: #38673c;
+}
+
+.page-project-detail-container .general-info-wrapper .row {
+  margin-bottom: 1rem;
+}
+
+.page-project-detail-container .general-info-wrapper .row:last-child {
+  margin-bottom: 0;
+}
+
+.page-project-detail-container #project-image-gallery .slide-image {
+  -o-object-fit: none;
+     object-fit: none;
+  -o-object-position: center;
+     object-position: center;
+  max-height: 500px;
+  width: 100%;
+}
+
+.page-project-detail-container #project-image-gallery .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #d26a6a;
+  margin-right: 7px;
+}
+
+.page-project-detail-container #project-image-gallery .carousel-indicators li:last-child {
+  margin-right: 0;
+}
+
+.page-project-detail-container #project-image-gallery .carousel-indicators li.active {
+  background: #d26a6a;
+}
+
+.page-project-detail-container .project-short-name {
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.page-project-detail-container .content-with-border {
+  border: 1px solid #dadada;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.page-project-detail-container .tab-btn-wrapper {
+  background: #d5d6d5;
+  margin: 0 -15px 10px;
+  display: block;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding: 9px 0;
+  border-radius: 2px;
+}
+
+.page-project-detail-container .tab-btn-wrapper .tab-btn-item {
+  cursor: pointer;
+  display: inline;
+  padding: 9px;
+  margin-right: 1px;
+}
+
+.page-project-detail-container .tab-btn-wrapper .tab-btn-item.active,
+.page-project-detail-container .tab-btn-wrapper .tab-btn-item:hover {
+  background: #578c5c;
+}
+
+.page-project-detail-container .tab-btn-wrapper .tab-btn-item.active a,
+.page-project-detail-container .tab-btn-wrapper .tab-btn-item:hover a {
+  color: #fff;
+}
+
+.page-project-detail-container .tab-btn-wrapper .tab-btn-item a {
+  padding: 10px;
+  color: #353535;
+}
+
+.page-project-detail-container .tab-btn-wrapper .tab-btn-item a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.page-project-detail-container .tab-content {
+  max-width: 100%;
+}
+
+.page-project-detail-container .tab-content img {
+  max-width: 100%;
+}
+
+.show-image {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.carousel-progress-project {
+  width: 50%;
+  height: auto;
+  position: relative;
+}
+
+.carousel-progress-project img {
+  display: hidden;
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.timeline {
+  height: 100px;
+  padding: 0 30px;
+}
+
+.timeline i {
+  position: absolute;
+  top: 30px;
+}
+
+.timeline i.prev {
+  left: 0;
+}
+
+.timeline i.next {
+  right: 0;
+}
+
+.events-wrapper {
+  overflow: hidden;
+}
+
+.events-wrapper::before,
+.events-wrapper::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  width: 20px;
+}
+
+.events-wrapper::before {
+  background-image: linear-gradient(to right, #e6f4ff, rgba(248, 248, 248, 0));
+  left: 0;
+}
+
+.events-wrapper::after {
+  background-image: linear-gradient(to left, #e6f4ff, rgba(248, 248, 248, 0));
+  right: 0;
+}
+
+.events-wrapper .line {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 43px;
+  height: 2px;
+  background: #b4c5d2;
+  transition: transform 0.4s;
+  min-width: 100%;
+}
+
+.events-wrapper ol {
+  position: absolute;
+  top: 60px;
+  list-style-type: none;
+  flex-direction: row;
+  display: flex;
+  z-index: 2;
+}
+
+.events-wrapper ol li {
+  margin-right: 10px;
+  font-size: 12px;
+  position: relative;
+}
+
+.events-wrapper ol li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  bottom: 29px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: 2px solid #06518b;
+  background-color: #06518b !important;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+}
+
+.events-wrapper ol li a.active::after {
+  background-color: #3d9e10 !important;
+  border-color: #3d9e10 !important;
+  width: 25px !important;
+  height: 25px !important;
+  bottom: 24px;
+}
+
+.bg-timeline {
+  background-color: #e6f4ff;
+}
+

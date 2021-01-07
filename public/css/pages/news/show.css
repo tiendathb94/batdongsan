@@ -1,0 +1,123 @@
+.page-title h1 {
+  font-size: 18px;
+  color: #055699;
+  font-weight: bolder;
+}
+
+.page-title span {
+  color: #8f8f8f;
+  font-size: 12px;
+}
+
+.page-title p {
+  color: #333;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.related-news {
+  list-style-type: square;
+  padding-left: 17px;
+}
+
+.text-default {
+  color: #055699;
+}
+
+.content-news h1,
+.content-news h2,
+.content-news h3,
+.content-news h4,
+.content-news h5,
+.content-news h6 {
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.search-news input {
+  min-width: 350px;
+}
+
+.content-first-news h4 {
+  font-size: 16px;
+}
+
+.content-first-news p {
+  font-size: 14px;
+}
+
+.content-news h4 {
+  font-size: 14px;
+}
+
+.content-news p {
+  font-size: 12px;
+}
+
+.text-subtitle {
+  color: #999;
+}
+
+.text-default {
+  color: #055699;
+}
+
+.h-120 {
+  height: 120px;
+}
+
+.h-150 {
+  height: 150px;
+}
+
+.bg-default-image {
+  background-color: #6c757d33;
+}
+
+.border-dotted-default {
+  border-bottom: 1px dotted #999;
+}
+
+.pagination-news nav {
+  float: right;
+}
+
+.pagination-news .page-item.active .page-link {
+  background-color: #055699;
+  border-color: #055699;
+}
+
+.pagination-news .page-link {
+  color: #055699;
+}
+
+.border-solid-default {
+  border-bottom: 1px solid #999;
+}
+
+.news-many-read a {
+  font-size: 14px;
+}
+
+.news-many-read a:hover {
+  color: #055699 !important;
+}
+
+.news-many-read h4 {
+  background-color: #055699;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.news-many-read .rounded-top {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+.category-many-care ul {
+  list-style-type: square;
+}
+

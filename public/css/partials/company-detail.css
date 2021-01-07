@@ -1,0 +1,15 @@
+.company-detail-template-wrapper .company-logo {
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.company-detail-template-wrapper .company-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.company-detail-template-wrapper h2 {
+  font-size: 2.3rem;
+}
+

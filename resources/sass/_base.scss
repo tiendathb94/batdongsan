@@ -1,0 +1,39 @@
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --primary-color: #139ff0;
+    --footer-background-color: #024073;
+    --white-color: #ffffff;
+}
+
+.block-title {
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+
+    &:before {
+        content: " ";
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 50%;
+    }
+
+    h4 {
+        display: inline-block;
+        background: #f8fafc;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #4a6377;
+    }
+}

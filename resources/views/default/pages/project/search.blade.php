@@ -1,0 +1,49 @@
+@extends('default.layouts.default')
+
+@section('page_title')
+    Tìm kiếm dự án bất động sản
+@endsection
+
+@section('content')
+    <div class="project-category-container container mt-5 mb-5">
+        <div id="js-form-search"></div>
+        <div class="row">
+            <div class="category-tab-content tab-content cols-12 col-md-8">
+
+                <div class="mb-4">
+                    <div class="text-muted small">
+                        {{$projects->total()}} dự án được tìm thấy
+                    </div>
+                </div>
+
+                @include('default.partials.project.project-items-row', ['projects' => $projects])
+
+                <div class="mt-3 pagination justify-content-center">
+                    {{$projects}}
+                </div>
+            </div>
+            <div class="cols-12 col-md-4">
+                @include('default.partials.project.news_review')
+            </div>
+        </div>
+    </div>
+@endsection
+
+@push('styles')
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/partials/project/project-items-row.css') . '?m=' . filemtime('css/partials/project/project-items-row.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/partials/project/block-show-categories-with-province.css') . '?m=' . filemtime('css/partials/project/block-show-categories-with-province.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/pages/project/project-category.css') . '?m=' . filemtime('css/pages/project/project-category.css') }}">
+    <link
+        rel="stylesheet"
+        href="{{ asset('css/partials/project/block-search.css') . '?m=' . filemtime('css/partials/project/block-search.css') }}">
+@endpush
+
+@push('scripts')
+    <script src="{{ asset('js/pages/project/search.js') . '?m=' . filemtime('js/pages/project/search.js') }}"></script>
+@endpush
