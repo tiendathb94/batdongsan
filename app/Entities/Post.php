@@ -37,6 +37,10 @@ class Post extends Model
             9 => self::THOUSAND_PER_M2_MONTH
         ]
     ];
+    
+    const StatusPending = 1;
+    const StatusApproved = 2;
+    const StatusDeclined = 3;
 
     const PRICE_NAME = [
         1 => self::MILLION,
@@ -64,7 +68,7 @@ class Post extends Model
 
     protected $fillable = [
         'title', 'slug', 'form', 'content', 'price_unit', 'status', 'facade', 'way_in',
-        'direction_house', 'direction_balcony', 'number_of_floors', 'number_of_bedroom',
+        'direction_house', 'direction_balcony', 'number_of_floors', 'number_of_bedroom','approval'
         'number_of_toilet', 'furniture', 'legal_information', 'total_area', 'price', 'total_price', 'category_id', 'user_id'
     ];
 

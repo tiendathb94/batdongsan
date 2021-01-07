@@ -35,16 +35,20 @@ function checkPermission($permName)
 
     return false;
 }
-
+function checkRule($user)
+{
+    $roles = $user->roles->pluck("name");
+    $checkPermission = in_array("super_admin",$roles->toArray());
+    return $checkPermission;
+}
 function getDifferentTime($time)
 {
     $text = '';
     if($time) {
         $now = Carbon::now();
         $minuteDifferent = $now->diffInMinutes($time);
-        $hourDifferrent = number_format($minuteDifferent / 60);
-        $dayDifferent = number_format($hourDifferrent / 24);
-        
+        $hourDifferrent = $minuteDifferent / 60;
+        $dayDifferent = $hourDifferrent / 24;
         if ($minuteDifferent < 60) {
             $text = $minuteDifferent . ' phút trước';
         } else if ($hourDifferrent < 24) {

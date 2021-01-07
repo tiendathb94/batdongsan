@@ -86,6 +86,16 @@ function personalMenuItemsDefinition()
                     'permission' => 'pages.user.approve_news'
                 ]
             ],
+        ],
+        [
+            'heading' => 'Quản lý thành viên',
+            'items' => [
+                [
+                    'route_name' => 'admin.index',
+                    'label' => 'Danh sách thành viên',
+                    'permission' => 'admin.index'
+                ]
+            ],
         ]
     ];
 }

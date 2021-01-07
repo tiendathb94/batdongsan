@@ -48,4 +48,16 @@ class PostController extends Controller
         $post->status = $post->status ? 0 : 1;
         $post->save();
     }
+    public function changeApproval($id,Request $request)
+    {
+        $post = Post::whereId($id)->firstOrFail();
+        $action = $request->action;
+        if($action == 'approve'){
+            $post->approval = 2;
+        }
+        if($action == 'decline'){
+            $post->approval = 3;
+        }
+        $post->save();
+    } 
 }
