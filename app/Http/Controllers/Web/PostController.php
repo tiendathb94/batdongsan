@@ -70,7 +70,7 @@ class PostController extends Controller
 
             $uploadedFilePath = $request->file('image')->storePublicly('/public/uploads/images/library');
             $category = Category::whereSlug($request->slug)->first();
-            dd($request->slug,$category,$request->all());
+            
             $createPost = Post::create([
                 'title' => $request->title,
                 'content' => $request->content,

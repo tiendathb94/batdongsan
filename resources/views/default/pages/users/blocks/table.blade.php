@@ -13,7 +13,7 @@
     <tbody>
         @foreach($posts as $post)
             <tr>
-                <td>{{ $post->short_name }}</td>
+                <td>{{ $post->title }}</td>
                 <td>
                     @if($post->imageLibraries->count())
                         <img src="{{ asset('storage' . $post->imageLibraries->first()->file_path) }}" style="width: 100px;" alt="">
@@ -39,7 +39,7 @@
     </tbody>
 </table>
 <div class="d-flex justify-content-center">
-    {{ $posts->appends(request()->all())->links() }}
+    
 </div>
 @if(!$posts->count())
   <p class="fs-12 text-center">Bạn chưa đăng tin rao bán/cho thuê nào.</p>

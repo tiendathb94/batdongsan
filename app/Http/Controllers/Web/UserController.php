@@ -33,7 +33,6 @@ class UserController extends Controller
         $user = auth()->user();
 
         $qb = Project::query()->where('user_id', '=', $user->id);
-
         $keyword = $request->get('keyword');
         if (!empty($keyword)) {
             $qb->where('long_name', 'like', "%$keyword%");
