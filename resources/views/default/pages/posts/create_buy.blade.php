@@ -67,19 +67,16 @@
         <div class="row">
             <div class="col col-sm-12 col-md-6">
                 <label htmlFor="form">Hình thức <span class="text-danger">(*)</span></label>
-                <select class="form-control" id="form" name="slug">
+                <select class="form-control" id="form" name="slug" onchange="getType($(this).val())">
                     <option value="">-- Hình thức --</option>
                     <option value="nha-dat-can-mua">Nhà đất cần mua</option>
                     <option value="nha-dat-can-thue">Nhà đất cần thuê</option>
                 </select>
             </div>
             <div class="col col-sm-12 col-md-6">
-                <label htmlFor="">Loại <span class="text-danger">(*)</span></label>
-                <select class="form-control" id="form" name="category_id">
-                    <option value="">Loại</option>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category ->name }}</option>
-                    @endforeach
+                <label htmlFor="">-- Loại -- <span class="text-danger">(*)</span></label>
+                <select class="form-control" id="type" name="category_id">
+                    <option value="">-- Loại --</option>
                 </select>
             </div>
         </div>
@@ -212,6 +209,26 @@
                     });
                     $('#ward').removeAttr('disabled');
                     $('#ward').html(text);
+                },
+                errors: function () {
+                    alert('Lỗi server chưa lấy được danh sách huyện.')
+                }
+            })
+        }
+        function getType(value) {
+            $.ajax({
+                url: "{{ route('api.category.by_destination_entity') }}",
+                type: "GET",
+                data: {
+                    "destination_entity": 'App\\Entities\\Post',
+                    "slug_parent" : value
+                },
+                success: function (respon) {
+                    let text = '<option value="" class="d-none" selected>-- Loại --</option>';
+                    $.each( respon, function( key, value ) {
+                        text += `<option value="${value.id}">${value.name}</option>`;
+                    });
+                    $('#type').html(text);
                 },
                 errors: function () {
                     alert('Lỗi server chưa lấy được danh sách huyện.')

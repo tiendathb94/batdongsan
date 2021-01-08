@@ -69,7 +69,7 @@ class CategoryController extends Controller
             if($parent_id > 0){
                 return  redirect()->route('pages.category.list_loai')->with('success', 'Tạo loại thành công!');
             }
-            return  redirect()->route('pages.category.list_hinh_thuc')->with('success', 'Tạo loại thành công!');
+            return  redirect()->route('pages.category.list_hinh_thuc')->with('success', 'Tạo hình thức thành công!');
         } catch ( \Exception $e ) {
             return back()->with('error', 'Thao tác thất bại!');
         }
