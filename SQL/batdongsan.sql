@@ -111,7 +111,11 @@ INSERT INTO `categories` (`id`, `created_at`, `updated_at`, `name`, `slug`, `thu
 (55, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Cần thuê văn phòng', 'can-thue-van-phong', '', 'App\\Entities\\Post', 24),
 (56, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Cần thuê cửa hàng, ki ốt', 'can-thue-cua-hang-ki-ot', '', 'App\\Entities\\Post', 24),
 (57, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Cần thuê kho, nhà xưởng, đất', 'can-thue-kho-nha-xuong-dat', '', 'App\\Entities\\Post', 24),
-(58, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Cần thuê loại bất động sản khác', 'can-thue-loai-bat-dong-san-khac', '', 'App\\Entities\\Post', 24);
+(58, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Cần thuê loại bất động sản khác', 'can-thue-loai-bat-dong-san-khac', '', 'App\\Entities\\Post', 24),
+(59, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Chung cư bán', 'chung-cu-ban', '', 'App\\Entities\\Post', NULL),
+(60, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Chung cư cho thuê', 'chung-cu-cho-thue', '', 'App\\Entities\\Post', NULL),
+(61, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Chung cư cần mua', 'chung-cu-can-mua', '', 'App\\Entities\\Post', NULL),
+(62, '2020-11-17 07:05:53', '2020-11-17 07:05:53', 'Chung cư cần thuê', 'chung-cu-can-thue', '', 'App\\Entities\\Post', NULL);
 
 -- --------------------------------------------------------
 

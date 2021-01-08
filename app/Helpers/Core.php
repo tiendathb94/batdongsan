@@ -47,8 +47,9 @@ function getDifferentTime($time)
     if($time) {
         $now = Carbon::now();
         $minuteDifferent = $now->diffInMinutes($time);
-        $hourDifferrent = $minuteDifferent / 60;
-        $dayDifferent = $hourDifferrent / 24;
+        $hourDifferrent = round($minuteDifferent/60);
+        $dayDifferent = round($hourDifferrent/24);
+        
         if ($minuteDifferent < 60) {
             $text = $minuteDifferent . ' phút trước';
         } else if ($hourDifferrent < 24) {
@@ -56,7 +57,7 @@ function getDifferentTime($time)
         } else if ($dayDifferent < 7) {
             $text = $dayDifferent . ' ngày trước';
         } else {
-            $text = $time->format('d/m/y H:s');
+            $text = $time->format('d/m/Y H:s');
         }
     }
     return $text;

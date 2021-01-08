@@ -96,6 +96,23 @@ function personalMenuItemsDefinition()
                     'permission' => 'admin.index'
                 ]
             ],
+        ],
+        [
+            'heading' => 'Quản lý hình thức',
+            'items' => [
+                [
+                    'route_name' => 'pages.category.list_hinh_thuc',
+                    'label' => 'Danh sách hình thức',
+                ],
+                [
+                    'route_name' => 'pages.category.list_loai',
+                    'label' => 'Danh sách loại',
+                ],
+                [
+                    'route_name' => 'pages.category.create_loai',
+                    'label' => 'Tạo hình thức,loại',
+                ]
+            ],
         ]
     ];
 }

@@ -21,11 +21,11 @@ class HomeController extends Controller
     {
         $agent = new Agent();
 
-        $tuvanluat = $this->tu_van_luat_home();
-        $hotnews = $this->hotnews();
-        $projectfeatures = $this->project_feature();
-        $newsTabs = $this->news_tabs_home();
-        $listReals = $this->list_realHomes();
+        $tuvanluat          = $this->tu_van_luat_home();
+        $hotnews            = $this->hotnews();
+        $projectfeatures    = $this->project_feature();
+        $newsTabs           = $this->news_tabs_home();
+        $listReals          = $this->list_realHomes();
         if ($agent->isDesktop()) {
             return view('default.layouts.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals'));
         }else{
