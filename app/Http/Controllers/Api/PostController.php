@@ -45,7 +45,7 @@ class PostController extends Controller
 
     public function changeStatus($id)
     {
-        $post = auth()->user()->posts()->whereId($id)->firstOrFail();
+        $post = Post::whereId($id)->firstOrFail();
         $post->status = $post->status ? 0 : 1;
         $post->save();
     }
