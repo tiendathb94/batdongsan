@@ -27,6 +27,7 @@ class PostController extends Controller
         $data['form'] = $category->id;
         $data['category_id'] = $request->category_id;
         $data['status'] = 0;
+        $data['approval'] = 1;
         $data['user_id'] = auth()->id();
         $post = Post::create($data);
         $address = $data['address'];
