@@ -283,6 +283,91 @@
       </div>
    </div>
    @endif
+   @if($listBuy->count() > 0 OR $listSell->count() > 0)
+   <div class="home-center bg-grey" id="interestedProductsBinnovaContent">
+      <div class="home-product product-4-you">
+         <h2 class="fl">{{trans('lang.product_for_you')}}</h2>
+         <div class="home-more-link">
+            <!-- <a href="#">{{trans('lang.latest_real_estate_sale')}}</a>
+            <a href="#">{{trans('lang.latest_real_estate_for_rent')}}</a> -->
+         </div>
+         <div class="clear"></div>
+         Sản phẩm nhà đất cần mua cần thuê
+         <ul style="display:flex">
+            @foreach($listBuy as $item)
+            <li class="moreBox">
+               <div class="vip5">
+                  <div class="product-thumb ">
+                     <a title="{{$item->title}}" href="#">
+                     <img src="{{$item->getThumbnail()}}" alt="{{$item->title}}">
+                     </a>
+                     <span class="product-feature">
+                     </span>
+                     <span class="product-media">4</span>
+                  </div>
+                  <div class="home-product-bound">
+                     <div class="p-title textTitle">
+                        <a href="#" title="{{$item->title}}">{{$item->title}}</a>
+                     </div>
+                     <div class="product-price">{{$item->price ? $item->price : 'Đang cập nhật'}} {{$item->price_unit_name}}</div>
+                     <span class="ic_dot">·</span>
+                     <div class="pro-m2">{{$item->total_area}} m²</div>
+                     <div class="product-address">
+                     @php $address = $item->address; @endphp
+                     @if($address)
+                        <a href="/ban-nha-mat-pho-dong-da-hn" title="{{ $address->address }}">{{ $address->address }}</a>,
+                        <a href="/ban-nha-mat-pho-ha-noi" title="{{ $address->province->name }}">{{ $address->province->name }}</a>
+                     @endif
+                     </div>
+                     <div class="product-date">
+                        {{time_ago($item->updated_at)}}
+                        <span class="tooltip-time">{{date("d/m/Y", strtotime($item->updated_at))}}</span>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            @endforeach
+         </ul>
+         Sản phẩm nhà đất bán cho thuê
+         <ul>
+            @foreach($listSell as $item)
+            <li class="moreBox">
+               <div class="vip5">
+                  <div class="product-thumb ">
+                     <a title="{{$item->title}}" href="#">
+                     <img src="{{$item->getThumbnail()}}" alt="{{$item->title}}">
+                     </a>
+                     <span class="product-feature">
+                     </span>
+                     <span class="product-media">4</span>
+                  </div>
+                  <div class="home-product-bound">
+                     <div class="p-title textTitle">
+                        <a href="#" title="{{$item->title}}">{{$item->title}}</a>
+                     </div>
+                     <div class="product-price">{{$item->price ? $item->price : 'Đang cập nhật'}} {{$item->price_unit_name}}</div>
+                     <span class="ic_dot">·</span>
+                     <div class="pro-m2">{{$item->total_area}} m²</div>
+                     <div class="product-address">
+                     @php $address = $item->address; @endphp
+                     @if($address)
+                        <a href="/ban-nha-mat-pho-dong-da-hn" title="{{ $address->address }}">{{ $address->address }}</a>,
+                        <a href="/ban-nha-mat-pho-ha-noi" title="{{ $address->province->name }}">{{ $address->province->name }}</a>
+                     @endif
+                     </div>
+                     <div class="product-date">
+                        {{time_ago($item->updated_at)}}
+                        <span class="tooltip-time">{{date("d/m/Y", strtotime($item->updated_at))}}</span>
+                     </div>
+                  </div>
+               </div>
+            </li>
+            @endforeach
+         </ul>
+         <div class="clear"></div>
+      </div>
+   </div>
+   @endif
    <script type="text/javascript">
       (function callJQuery() {
           if (window.FrontEnd && window.FrontEnd.Home && window.FrontEnd.Home.InterestedProductsBinnova) {

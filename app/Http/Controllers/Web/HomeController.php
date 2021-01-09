@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Entities\News;
 use App\Entities\Category;
+use App\Entities\Post;
 use App\Entities\Project;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -26,13 +27,27 @@ class HomeController extends Controller
         $projectfeatures    = $this->project_feature();
         $newsTabs           = $this->news_tabs_home();
         $listReals          = $this->list_realHomes();
+        $listBuy            = $this->list_buy();
+        $listSell           = $this->list_sell();
         if ($agent->isDesktop()) {
-            return view('default.layouts.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals'));
+            return view('default.layouts.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listBuy','listSell'));
         }else{
-            return view('default.mobile.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals'));
+            return view('default.mobile.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listSell','listBuy'));
         }
     }
 
+    public function list_sell(){
+        $categorySellHouse = Category::whereSlug(Post::SELL_HOUSE)->first();
+        $categoryLeaseHouse = Category::whereSlug(Post::LEASE_HOUSE)->first();
+        $posts = Post::whereIn('form', [$categorySellHouse->id, $categoryLeaseHouse->id]);
+        return $posts->orderByDesc('created_at')->paginate(20);
+    }
+    public function list_buy(){
+        $categoryBuyHouse = Category::whereSlug(Post::HOUSE_BUY)->first();
+        $categoryRentHouse = Category::whereSlug(Post::HOUSE_RENT)->first();
+        $posts = Post::whereIn('form', [$categoryBuyHouse->id, $categoryRentHouse->id]);
+        return $posts->orderByDesc('created_at')->paginate(20);
+    }
     public function tu_van_luat_home(){
         $news = [];
         $category = Category::where('destination_entity', News::class)

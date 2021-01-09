@@ -31,6 +31,7 @@ return [
     'advice'=>'Tư vấn',
     'feng_shui'=>'Phong thủy',
     'view_more_news'=>'Xem thêm tin tức',
-    'real_estate_by_location'=>'Bất động sản theo địa điểm'
+    'real_estate_by_location'=>'Bất động sản theo địa điểm',
+    'product_for_you'        => 'Sản phẩm cho bạn'
 
 ];
