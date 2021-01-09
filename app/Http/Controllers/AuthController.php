@@ -126,6 +126,7 @@ class AuthController extends Controller
             if ($record->first()) {
                 $record->update([
                     'email_verified_at' => now(),
+                    'active'            => 1,
                     'remember_token' => (new Token())->Unique('users', 'remember_token', 60)
                 ]);
                 return redirect()->route('login')->with('success', 'Xác thực thành công! mời đăng nhập để tiếp tục!');
