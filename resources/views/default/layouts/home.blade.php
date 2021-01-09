@@ -292,7 +292,7 @@
             <a href="#">{{trans('lang.latest_real_estate_for_rent')}}</a> -->
          </div>
          <div class="clear"></div>
-         Sản phẩm nhà đất cần mua cần thuê
+         <!-- Sản phẩm nhà đất cần mua cần thuê -->
          <ul style="display:flex">
             @foreach($listBuy as $item)
             <li class="moreBox">
@@ -328,7 +328,7 @@
             </li>
             @endforeach
          </ul>
-         Sản phẩm nhà đất bán cho thuê
+         <!-- Sản phẩm nhà đất bán cho thuê -->
          <ul>
             @foreach($listSell as $item)
             <li class="moreBox">
