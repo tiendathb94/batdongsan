@@ -20,6 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->string('slug', 255);
             $table->string('thumbnail', 255)->nullable();
             $table->string('destination_entity', 255);
+            $table->bigInteger('parent_id');
             $table->index('slug');
             $table->index(['name', 'destination_entity']);
             $table->unique(['name', 'destination_entity']);
