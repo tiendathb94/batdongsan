@@ -39,13 +39,13 @@ class HomeController extends Controller
     public function list_sell(){
         $categorySellHouse = Category::whereSlug(Post::SELL_HOUSE)->first();
         $categoryLeaseHouse = Category::whereSlug(Post::LEASE_HOUSE)->first();
-        $posts = Post::whereIn('form', [$categorySellHouse->id, $categoryLeaseHouse->id]);
+        $posts = Post::whereIn('form', [$categorySellHouse->id, $categoryLeaseHouse->id])->whereStatus(1)->whereApproval(2);
         return $posts->orderByDesc('created_at')->paginate(20);
     }
     public function list_buy(){
         $categoryBuyHouse = Category::whereSlug(Post::HOUSE_BUY)->first();
         $categoryRentHouse = Category::whereSlug(Post::HOUSE_RENT)->first();
-        $posts = Post::whereIn('form', [$categoryBuyHouse->id, $categoryRentHouse->id]);
+        $posts = Post::whereIn('form', [$categoryBuyHouse->id, $categoryRentHouse->id])->whereStatus(1)->whereApproval(2);
         return $posts->orderByDesc('created_at')->paginate(20);
     }
     public function tu_van_luat_home(){
