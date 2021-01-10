@@ -36,6 +36,7 @@
                 <th class="d-none d-md-table-cell">Giới tính</th>
                 <th class="d-none d-md-table-cell">Ngày tạo</th>
                 <th>Trạng thái</th>
+                <th>Hành động</th>
             </tr>
             </thead>
             <tbody>
@@ -53,6 +54,11 @@
                         <input data-url="{{ route('admin.change_active', $user->id) }}" type="checkbox" {{ $user->active ? 'checked' : '' }} class="custom-control-input js-change-active" id="switch{{ $user->id }}">
                         <label class="custom-control-label" for="switch{{ $user->id }}"></label>
                     </div>
+                    </td>
+                    <td>
+                        <a href="{{route('admin.show',['id'=>$user->id])}}">
+                            <span class="ti-pencil-alt"></span> Sửa
+                        </a>
                     </td>
                 </tr>
             @endforeach
