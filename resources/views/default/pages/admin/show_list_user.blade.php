@@ -47,7 +47,17 @@
                     <td class=" d-md-table-cell">{{$user->fullname}}</td>
                     <td class="d-none d-md-table-cell">{{$user->phone}}</td>
                     <td class="d-none d-md-table-cell">{{$user->date_of_birth}}</td>
-                    <td class="d-none d-md-table-cell">{{$user->gender == 1 ? 'Nam' : 'Nữ'}}</td>
+                    <td class="d-none d-md-table-cell">
+                    @switch($user->gender)
+                        @case(1)
+                        Nam
+                        @break
+                        @case(2)
+                        Nữ
+                        @break
+                        @default
+                    @endswitch
+                    </td>
                     <td class="d-none d-md-table-cell">{{\Carbon\Carbon::parse($user->created_at)->format('d/m/Y')}}</td>
                     <td>
                     <div class="custom-control custom-switch">
@@ -55,9 +65,13 @@
                         <label class="custom-control-label" for="switch{{ $user->id }}"></label>
                     </div>
                     </td>
-                    <td>
+                    <td width='100'>
                         <a href="{{route('admin.show',['id'=>$user->id])}}">
                             <span class="ti-pencil-alt"></span> Sửa
+                        </a>
+                        -
+                        <a data-url="{{route('admin.delete',['id'=>$user->id])}}" class="delete-user-button" data-user-id="{{$user->id}}">
+                            <span class="ti-trash"></span> Xóa
                         </a>
                     </td>
                 </tr>
@@ -66,8 +80,6 @@
         </table>
 
         {{$users->render()}}
-
-        <div id="background-react-component-container"></div>
     @endif
 @endsection
 @push('scripts')
@@ -79,6 +91,22 @@
                     url: url,
                     method: 'get'
                 })
+            })
+            $('.delete-user-button').click(function () {
+                let url = $(this).data('url');
+                let item = $(this);
+                var cf = confirm('Bạn có chắc chắn muốn xóa thành viên này không?');
+                if(cf == true){
+                    $.ajax({
+                        url: url,
+                        method: 'get',
+                        success: function(data){
+                            if(data){
+                                item.parent().parent().remove();
+                            }
+                        }
+                    })
+                }
             })
         })
     </script>

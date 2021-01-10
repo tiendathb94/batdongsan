@@ -30,6 +30,7 @@ return [
     'feature_news'=>'Tin nổi bật',
     'advice'=>'Tư vấn',
     'feng_shui'=>'Phong thủy',
+    'new_project' => 'Dự án mới',
     'view_more_news'=>'Xem thêm tin tức',
     'real_estate_by_location'=>'Bất động sản theo địa điểm',
     'product_for_you'        => 'Sản phẩm cho bạn'

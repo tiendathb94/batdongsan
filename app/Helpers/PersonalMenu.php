@@ -113,6 +113,15 @@ function personalMenuItemsDefinition()
                     'label' => 'Tạo hình thức,loại',
                 ]
             ],
+        ],
+        [
+            'heading' => 'Cấu hình',
+            'items' => [
+                [
+                    'route_name' => 'config.index',
+                    'label' => 'Cập nhật thông tin cấu hình',
+                ]
+            ],
         ]
     ];
 }

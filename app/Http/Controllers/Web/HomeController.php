@@ -29,10 +29,11 @@ class HomeController extends Controller
         $listReals          = $this->list_realHomes();
         $listBuy            = $this->list_buy();
         $listSell           = $this->list_sell();
+        $config             = DB::table("config")->first();
         if ($agent->isDesktop()) {
-            return view('default.layouts.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listBuy','listSell'));
+            return view('default.layouts.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listBuy','listSell','config'));
         }else{
-            return view('default.mobile.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listSell','listBuy'));
+            return view('default.mobile.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listSell','listBuy','config'));
         }
     }
 

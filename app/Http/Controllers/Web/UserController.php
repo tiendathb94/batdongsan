@@ -37,14 +37,12 @@ class UserController extends Controller
         if (!empty($keyword)) {
             $qb->where('long_name', 'like', "%$keyword%");
         }
-
         $categoryId = $request->get('category_id');
         if ($categoryId) {
             $qb->where('category_id', '=', $categoryId);
         }
 
         $paginate = $qb->paginate(15);
-
         return view($this->_config['view'], [
             'projects' => $paginate,
             'categories' => Category::query()->where('destination_entity', Project::class)->get(),

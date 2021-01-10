@@ -14,7 +14,7 @@ class AdminController extends Controller
         if(!empty($keyword)){
             $users = User::where('fullname', 'LIKE', '%' . $keyword . '%')->paginate(20);
         }else{
-            $users = User::paginate(20);
+            $users = User::where('id','!=',1)->paginate(20);
         }
         return view($this->_config['view'], ["users" => $users, "keyword" => $keyword]);
     }
@@ -29,5 +29,11 @@ class AdminController extends Controller
         $userUpdate = $request->only(['fullname','phone','date_of_birth','gender']);
         $user->update($userUpdate);
         return  redirect()->route('admin.index')->with('success', 'Cập nhật thành công!');
+    }
+
+    public function deleteUser($id){
+        $user = User::findOrFail($id);
+        $user->delete();
+        return true;
     }
 }

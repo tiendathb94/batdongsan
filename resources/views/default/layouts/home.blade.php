@@ -1,6 +1,14 @@
 @extends('default.layouts.default')
 @section('page_title')
-    Trang chủ - Đăng tin bất động sản uy tín và chất lượng nhất Việt Nam
+    {{$config->title}}
+@endsection
+@section('head')
+    <meta name="keywords" content="{{$config->meta_keyword}}">
+    <meta name="description" content="{{$config->meta_description}}">
+    <meta property="og:url" content="{{$config->meta_url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{$config->title}}">
+    <meta property="og:description" content="{{$config->meta_description}}">
 @endsection
 
 @section('content')
@@ -45,6 +53,9 @@
                </li>
                <li>
                   <h2><a style="cursor: pointer" href="javascript:void(0)" data-tab="hometab3">{{trans('lang.feng_shui')}}</a></h2>
+               </li>
+               <li>
+                  <h2><a style="cursor: pointer" href="javascript:void(0)" data-tab="hometab4">{{trans('lang.new_project')}}</a></h2>
                </li>
             </ul>
             <a href="{{ route('home') }}/tin-tuc" id="tabview" class="home-small-more">{{trans('lang.view_more_news')}}<img src="/images/icons/icon-arrow-right.png"></a>
@@ -175,6 +186,49 @@
                            <li>
                               <h3>
                                  <a title="{{$newsTab->title}}" data-index="#advtab-{{$i}}" href="{{ route('news.show', [$newsTab->category->slug, $newsTab->slug]) }}">
+                                 {{$newsTab->title}}
+                                 </a>
+                              </h3>
+                           </li>
+                        @endif
+                        @endforeach
+                     </ul>
+                  </div>
+               </div>
+               <div class="clear"></div>
+            </div>
+            <div id="hometab4" class="hidden newscontain">
+               <div class="home-small-main-1 news-show">
+                     @php $i=0; @endphp
+                     @foreach($newsTabs as $newsTab)
+                     @if($newsTab->advice == 1)
+                     @php $i++; @endphp
+                     <div id="newtab-{{$i}}">
+                        <h3>
+                           <a title="{{$newsTab->title}}" href="{{ route('news.show', [$newsTab->category->slug, $newsTab->slug]) }}">
+                           <span>
+                              <img noloaderror="true" imgerr="1" src="{{ $newsTab->thumbnail_path }}" is-lazy-image="true" lazy-id="0">
+                           </span>
+                           {{$newsTab->title}}
+                           </a>
+                        </h3>
+                        <div class="news-time">
+                           <img src="/images/icons/clock.png">{{time_ago($newsTab->updated_at)}}
+                        </div>
+                     </div>
+                  @endif
+                  @endforeach
+               </div>
+               <div class="home-small-main-2">
+                  <div class="list-news">
+                     <ul>
+                        @php $i=0; @endphp
+                        @foreach($newsTabs as $newsTab)
+                        @if($newsTab->advice == 1)
+                        @php $i++; @endphp
+                           <li>
+                              <h3>
+                                 <a title="{{$newsTab->title}}" data-index="#newtab-{{$i}}" href="{{ route('news.show', [$newsTab->category->slug, $newsTab->slug]) }}">
                                  {{$newsTab->title}}
                                  </a>
                               </h3>

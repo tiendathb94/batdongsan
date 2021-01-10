@@ -5,4 +5,5 @@ Route::group(['guard' => 'web',  'prefix' => 'admin', 'middleware' => ['auth','p
     ])->name('admin.index');
     Route::get('danh-sach/{id}', 'Web\AdminController@show')->name('admin.show');
     Route::post('danh-sach/{id}', 'Web\AdminController@updateUser')->name('admin.update');
+    Route::get('delete-user/{id}', 'Web\AdminController@deleteUser')->name('admin.delete');
 });
