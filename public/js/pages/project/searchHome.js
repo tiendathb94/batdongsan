@@ -50368,25 +50368,25 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "home-search-tool"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        "class": "home-search-tab"
+        className: "home-search-tab"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        "class": "actived",
+        className: "actived",
         ptype: "38"
       }, "Nh\xE0 \u0111\u1EA5t b\xE1n"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         ptype: "49"
       }, "Nh\xE0 \u0111\u1EA5t cho thu\xEA")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        "class": "home-search-content"
+        className: "home-search-content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        "class": "home-search-control"
+        className: "home-search-control"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        "class": "search-cate"
+        className: "search-cate"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        "class": "select-custom"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("o", {
+        className: "select-custom"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
         id: "lblCurrCate"
       }, "Lo\u1EA1i nh\xE0 \u0111\u1EA5t")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         id: "divCatagoryReOptions",
-        "class": "advance-select-options"
+        className: "advance-select-options"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         ref: this.categoryProjectRef,
         onChange: this.onChangeSelect,
@@ -50394,7 +50394,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         id: ""
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
         id: "3232",
-        "class": "click_pr"
+        className: "click_pr"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Lo\u1EA1i d\u1EF1 \xE1n")), this.state.projectCategories.map(function (category) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
           onClick: "selected({category.name})",
@@ -50402,13 +50402,13 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
           value: category.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, category.name));
       })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        "class": "search-input"
+        className: "search-input"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SearchProject__WEBPACK_IMPORTED_MODULE_6__["default"], {
         onChange: this.onChangeProject,
         inputSearchRef: this.inputSearchRef,
         placeholderInput: "Nh\u1EADp t\u1EEB kh\xF3a t\xECm ki\u1EBFm theo t\xEAn d\u1EF1 \xE1n"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        "class": "search-button"
+        className: "search-button"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: this.searchProject,
         className: "btn-home-search",
@@ -50416,7 +50416,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "ti-search"
       }), " T\xECm ki\u1EBFm")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        "class": "clear"
+        className: "clear"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 timcode"
       }, this.state.isMoreSearch && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {

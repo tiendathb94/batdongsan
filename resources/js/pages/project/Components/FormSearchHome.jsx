@@ -140,38 +140,38 @@ class FormSearchHome extends Component {
     render () {
         return (
             <div className="home-search-tool">
-                <ul class="home-search-tab">
-                    <li class="actived" ptype="38">Nhà đất bán</li>
+                <ul className="home-search-tab">
+                    <li className="actived" ptype="38">Nhà đất bán</li>
                     <li ptype="49">Nhà đất cho thuê</li>
                 </ul>
-                <div class="home-search-content">
-                    <div class="home-search-control">
-                        <div class="search-cate">
-                            <div class="select-custom">
-                                <o id="lblCurrCate">Loại nhà đất</o>
+                <div className="home-search-content">
+                    <div className="home-search-control">
+                        <div className="search-cate">
+                            <div className="select-custom">
+                                <p id="lblCurrCate">Loại nhà đất</p>
                             </div>
-                            <div id="divCatagoryReOptions" class="advance-select-options">
+                            <div id="divCatagoryReOptions" className="advance-select-options">
                                 <ul ref={this.categoryProjectRef} onChange={this.onChangeSelect} name="categoryId" id="">
-                                    <li id="3232" class="click_pr"><span>Loại dự án</span></li>
+                                    <li id="3232" className="click_pr"><span>Loại dự án</span></li>
                                     {
                                         this.state.projectCategories.map((category) => (<li onClick="selected({category.name})" key={category.id} value={category.id}><span>{category.name}</span></li>))
                                     }
                                 </ul>
                             </div>
                         </div>
-                        <div class="search-input">
+                        <div className="search-input">
                             <SearchProject 
                                             onChange={this.onChangeProject}
                                             inputSearchRef={this.inputSearchRef}
                                             placeholderInput="Nhập từ khóa tìm kiếm theo tên dự án"
                                             />
                         </div>
-                        <div class="search-button">
+                        <div className="search-button">
                             <button onClick={this.searchProject} className="btn-home-search" type="button">
                                 <i className="ti-search"></i> Tìm kiếm
                             </button>
                         </div>
-                        <div class="clear"></div>
+                        <div className="clear"></div>
                     </div>
                     <div className="col-12 timcode">
                         {
