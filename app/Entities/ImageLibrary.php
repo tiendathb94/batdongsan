@@ -3,7 +3,6 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Entities\ImageLibrary;
 use \Carbon\Carbon;
 
 class ImageLibrary extends Model

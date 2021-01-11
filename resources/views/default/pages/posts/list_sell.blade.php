@@ -11,7 +11,7 @@
     @include($block . 'title', ['title' => 'Quản lý tin rao bán/cho thuê'])
     @include($block . 'search_posts', ['action' => route('posts.list_sell')])
     @include('default.partials.flash-message')
-    @include($block . 'table', ['posts' => $posts])
+    @include($block . 'table', ['posts' => $posts,'type' => 'sell'])
     @include($block . 'modal_confirm')
 @endsection
 

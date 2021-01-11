@@ -26,7 +26,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('posts.store',['id'=>$post->id]) }}" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col">
@@ -37,14 +37,14 @@
         <div class="row">
             <div class="col col-sm-12">
                 <label htmlFor="title">Tiêu đề <span class="text-danger">(*)</span></label>
-                <input type="text" class="form-control" id="title" name="title"/>
+                <input type="text" class="form-control" id="title" name="title"/ value="{{$post->title}}">
             </div>
         </div>
 
         <div class="row">
             <div class="col col-sm-12">
                 <label htmlFor="content">Nội dung tin đăng <span class="text-danger">(*)</span></label>
-                <textarea rows="3" class="form-control" id="content" name="content"></textarea>
+                <textarea rows="3" class="form-control" id="content" name="content" value="{{$post->content}}"></textarea>
             </div>
         </div>
 
@@ -54,7 +54,7 @@
                 <input type="file" name="image" class="form-control" id="imgInp" accept="image/png, image/jpeg, image/jpg, image/gif">
             </div>
             <div class="col-6">
-                <img style="width: 200px; margin-top: 10px"  alt="" id="blah">
+                <img style="width: 200px; margin-top: 10px"  alt="" id="blah" src="{{$post->getThumbnail()}}">
             </div>
         </div>
 
@@ -69,14 +69,14 @@
                 <label htmlFor="form">Hình thức <span class="text-danger">(*)</span></label>
                 <select class="form-control" id="form" name="slug" onchange="getType($(this).val())">
                     <option value="">-- Hình thức --</option>
-                    <option value="nha-dat-can-mua">Nhà đất cần mua</option>
-                    <option value="nha-dat-can-thue">Nhà đất cần thuê</option>
+                    <option value="nha-dat-can-mua" <?php echo ($post->slug == 'nha-dat-can-mua') ?  "checked" : "" ;  ?> >Nhà đất cần mua</option>
+                    <option value="nha-dat-can-thue" <?php echo ($post->slug == 'nha-dat-can-thue') ?  "checked" : "" ;  ?>>Nhà đất cần thuê</option>
                 </select>
             </div>
             <div class="col col-sm-12 col-md-6">
                 <label htmlFor="">-- Loại -- <span class="text-danger">(*)</span></label>
                 <select class="form-control" id="type" name="category_id">
-                    <option value="">-- Loại --</option>
+                    <option value="{{$post->category_id}}"></option>
                 </select>
             </div>
         </div>
@@ -118,7 +118,7 @@
                 <select class="form-control" id="form" name="project_id">
                     <option value="">-- Dự án --</option>
                     @foreach ($projects as $project)
-                        <option value="{{ $project->id }}">{{ $project->long_name }}</option>
+                        <option value="{{ $project->id }}">{{ $project ->name }}</option>
                     @endforeach
                 </select>
             </div>

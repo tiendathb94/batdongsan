@@ -10,6 +10,9 @@ use App\Entities\Category;
 
 class PostController extends Controller
 {
+    public function show($id){
+        return Post::with('category')->find($id);
+    }
     public function getPriceUnit(Request $request)
     {
         return Post::CATEGORIES[$request->slug];

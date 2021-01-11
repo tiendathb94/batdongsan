@@ -9,8 +9,9 @@
             <th>Đơn vị</th>
             <th width="100">Trạng thái</th>
             @if(checkRule(auth()->user()))
-            <th width="100">Hành động</th>
+            <th width="100">Phê duyệt</th>
             <th>Hiển thị</th>
+            <th width="100">Hành động</th>
             @endif
         </tr>
     </thead>
@@ -73,6 +74,15 @@
                         <input data-url="{{ route('posts.change_status', $post->id) }}" type="checkbox" {{ $post->status ? 'checked' : '' }} class="custom-control-input js-change-status" id="switch{{ $post->id }}">
                         <label class="custom-control-label" for="switch{{ $post->id }}"></label>
                     </div>
+                </td>
+                <td width='100'>
+                    <a href="{{$type == 'sell' ? route('posts.edit_sell',['id'=>$post->id]) : route('posts.edit_buy',['id'=>$post->id])}}">
+                        <span class="ti-pencil-alt"></span> Sửa
+                    </a>
+                    -
+                    <a data-url="{{$type == 'sell' ? route('posts.delete_sell',['id'=>$post->id]) : route('posts.delete_buy',['id'=>$post->id])}}" class="delete-post-button" data-post-id="{{$post->id}}">
+                        <span class="ti-trash"></span> Xóa
+                    </a>
                 </td>
                 @endif
             </tr>

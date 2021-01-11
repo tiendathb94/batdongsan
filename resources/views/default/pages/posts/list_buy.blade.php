@@ -11,7 +11,7 @@
     @include($block . 'title', ['title' => 'Quản lý tin cần mua/cần thuê'])
     @include($block . 'search_posts', ['action' => route('posts.list_buy')])
     @include('default.partials.flash-message')
-    @include($block . 'table', ['posts' => $posts])
+    @include($block . 'table', ['posts' => $posts,'type' => 'buy'])
     @include($block . 'modal_confirm')
 @endsection
 

@@ -12,6 +12,8 @@ use App\Entities\Category;
 use App\Entities\Project;
 use App\Http\Requests\SavePostRequest;
 use App\Entities\Address;
+use App\Entities\ImageLibrary;
+
 use DB;
 
 
@@ -20,6 +22,76 @@ class PostController extends Controller
     public function createSell()
     {
         return view($this->_config['view']);
+    }
+    public function updateSell(Request $request,$id){
+        $user_id = auth()->id();
+        $post = Post::find($id);
+        $post->title        = $request->title;
+        $post->slug         = $request->slug;
+        $post->category_id  = $request->category_id;
+        $post->content  = $request->content;
+        $post->total_area   = $request->total_area;
+        $post->price        = $request->price;
+        $post->price_unit  = $request->price_unit;
+        $post->way_in  = $request->way_in;
+        $post->facade  = $request->facade;
+        $post->direction_house  = $request->direction_house;
+        $post->direction_balcony  = $request->direction_balcony;
+        $post->number_of_floors  = $request->number_of_floors;
+        $post->number_of_bedroom  = $request->number_of_bedroom;
+        $post->number_of_toilet  = $request->number_of_toilet;
+        $post->furniture  = $request->furniture;
+        $post->legal_information  = $request->legal_information;
+        $post->save();
+        $address = Address::where('addressable_type',Post::class)->where('addressable_id',$post->id)->first();
+        $address->province_id = $request->province_id;
+        $address->district_id = $request->district_id;
+        $address->ward_id = $request->ward_id;
+        $address->address = $request->address;
+        $address->save();
+        if($request->has('image')){
+            $uploadedFilePath = $request->file('image')->storePublicly('/public/uploads/images/library');
+            $image = ImageLibrary::where('image_libraryable_type',Post::class)->where('image_libraryable_id',$id)->first();
+            if(is_null($image)){
+                ImageLibrary::insert([
+                    'image_libraryable_type' => Post::class,
+                    'file_path' => str_replace('public', '', $uploadedFilePath),
+                    'user_id' => $user_id,
+                    'meta_data' => '',
+                    'library_type' => Post::class,
+                    'image_libraryable_id' => $id
+                ]);
+            }else{
+                $image->file_path = str_replace('public', '', $uploadedFilePath);
+                $image->save();
+            }
+        }
+        return redirect(route("posts.list_sell"));
+    }
+    public function editPost($id)
+    {
+        $provinces = Province::all();
+        $wards = Ward::all();
+        $projects = Project::all();
+        $post = Post::with('category')->find($id);
+        $categories = Category::where('parent_id',$post->category->id)->get();
+        $address = Address::where('addressable_type',Post::class)->where('addressable_id',$post->id)->first();
+        $districts = District::where('province_id',$address->province_id)->get();
+        $wards = Ward::where('district_id',$address->district_id)->get();
+        $price_unit =  Post::CATEGORIES[$post->category->slug];
+        $data = [
+            'categories' => $categories,
+            'provinces' => $provinces,
+            'districts' => $districts,
+            'wards' => $wards,
+            'projects' => $projects,
+            'post'     => $post,
+            'address'   => $address,
+            'price_unit' => $price_unit,
+            'direction' => Post::DIRECTIONS
+        ];
+        
+        return view($this->_config['view'],$data);
     }
 
     public function listSell(Request $request)
@@ -105,7 +177,7 @@ class PostController extends Controller
             
             $createPost->address()->create($address);
             $createPost->imageLibraries()->create([
-                'library_type' => Post::class,
+                'image_libraryable_type' => Post::class,
                 'file_path' => str_replace('public', '', $uploadedFilePath),
                 'user_id' => $user_id,
                 'meta_data' => '',
