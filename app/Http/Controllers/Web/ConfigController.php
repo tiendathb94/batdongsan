@@ -12,11 +12,25 @@ class ConfigController extends Controller
         $config = DB::table("config")->first();
         return view("default.pages.config.index",["config" => $config]);
     }
+    public function indexConfigFooter(){
+        $config = DB::table("config_footer")->first();
+        return view("default.pages.config.footer",["config" => $config]);
+    }
     public function updateConfig(Request $request){
         try {
             $dataUpdate = $request->all();
             unset($dataUpdate['_token']);
             $config = DB::table("config")->where("id",1)->update($dataUpdate);
+            return back()->with('success', 'Cập nhật thành công');
+        } catch (\Throwable $th) {
+            return back()->with('error', 'Thao tác thất bại!');
+        }
+    }
+    public function updateConfigFooter(Request $request){
+        try {
+            $dataUpdate = $request->all();
+            unset($dataUpdate['_token']);
+            $config = DB::table("config_footer")->where("id",1)->update($dataUpdate);
             return back()->with('success', 'Cập nhật thành công');
         } catch (\Throwable $th) {
             return back()->with('error', 'Thao tác thất bại!');

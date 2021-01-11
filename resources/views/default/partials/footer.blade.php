@@ -6,30 +6,30 @@
          <div class="footer-col1">
             <div class="footer-logo">
                <a href="{{ route('home') }}">
-                    <img src="/images/logo-footer-no1.png">
+                    <img src="{{$config_footer->logo}}">
                </a>
             </div>
             <div class="footer-company-name center">
-               Công ty Cổ phần PropertyGuru Việt Nam
+               {{$config_footer->company_name}}
                <a href="https://www.propertygurugroup.com/" target="_blank" rel="nofollow">Một thành viên của tập đoàn PropertyGuru</a>
             </div>
             <div class="footer-add">
                <span>
                <img src="/images/icons/placeholder-line.png">
-               </span>Tầng 31, Keangnam Hanoi Landmark, Phạm Hùng, Nam Từ Liêm, Hà Nội
+               </span>{{$config_footer->address}}
             </div>
             <div class="footer-add">
                <span>
                <img src="/images/icons/phone-call.png">
-               </span>(024) 3562 5939 - (024) 3562 5940
+               </span>{{$config_footer->phone}}
             </div>
             <div class="footer-add footer-social">
                <a href="http://online.gov.vn/HomePage/WebsiteDisplay.aspx?DocId=5488" rel="nofollow" target="_blank"><img src="/images/icons/da-dang-ki-bct.png" class="bct"></a>
-               <a href="https://www.facebook.com/Batdongsandv" rel="nofollow" target="_blank">
+               <a href="{{$config_footer->facebook}}" rel="nofollow" target="_blank">
                <img src="/images/icons/fb.png">
-               </a> <a href="https://www.youtube.com/channel/UCLAgPnJX3b3vff4uBsyufPQ" rel="nofollow" target="_blank">
+               </a> <a href="{{$config_footer->youtube}}" rel="nofollow" target="_blank">
                <img src="/images/icons/youtube.png">
-               </a> <a href="http://zalo.me/2606322533378009715" rel="nofollow" target="_blank">
+               </a> <a href="{{$config_footer->zalo}}" rel="nofollow" target="_blank">
                <img src="/images/icons/zalo2.png">
                </a>
             </div>
@@ -68,17 +68,17 @@
                      <li>
                         <span>
                         <img src="/images/icons/hotline.png">
-                        </span>Tổng đài CSKH: 1900 1881
+                        </span>Tổng đài CSKH: {{$config_footer->hotline}}
                      </li>
                      <li>
                         <span>
                         <img src="/images/icons/email.png">
-                        </span><a href="mailto:hotro@batdongsan.com.vn">hotro@batdongsan.com.vn</a>
+                        </span><a href="mailto:{{$config_footer->mail}}">{{$config_footer->mail}}</a>
                      </li>
                      <li>
                         <span>
                         <img src="/images/icons/ic_mailbox1.png" width="16">
-                        </span><a rel="nofollow" href="mailto:cskh@batdongsan.com.vn">cskh@batdongsan.com.vn</a>
+                        </span><a rel="nofollow" href="mailto:{{$config_footer->mail_cs}}">{{$config_footer->mail_cs}}</a>
                      </li>
                   </ul>
                </div>

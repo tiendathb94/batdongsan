@@ -120,6 +120,10 @@ function personalMenuItemsDefinition()
                 [
                     'route_name' => 'config.index',
                     'label' => 'Cập nhật thông tin cấu hình',
+                ],
+                [
+                    'route_name' => 'config.footer',
+                    'label' => 'Cập nhật thông tin footer',
                 ]
             ],
         ]
