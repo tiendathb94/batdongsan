@@ -78810,129 +78810,99 @@ var Form = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onClickSaveProjectButton", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var times, date_upload_file, date_sort, values, createProjectResponse, createdProject, stateErrors, errors, i;
+      var times;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               times = $('.datepicker').val().split('/');
-              date_upload_file = times[2] + '-' + times[1] + '-' + times[0];
-              date_sort = date_upload_file.replace(/-/g, '');
+              console.log(times); // var date_upload_file = times[2] + '-' + times[1] + '-' + times[0];
+              // var date_sort = date_upload_file.replace(/-/g, '')
+              // if (!this.validate()) {
+              //     window.scrollTo(0, 0)
+              //     return
+              // }
+              // const values = cloneDeep(this.state.formValues)
+              // values.project_overview = draftToHtml(convertToRaw(this.state.formValues.project_overview.getCurrentContent()))
+              // values.tab_contents = this.tabManager.current.getTabContentsFormRawValues()
+              // try {
+              //     this.setState({ loading: true })
+              //     // Create project
+              //     if (this.isEditMode) {
+              //         await axios.put(`${config.api.baseUrl}/project/${this.props.project.id}`, values)
+              //         // Upload progress images
+              //         await values.tab_contents.map((tab) => {
+              //             if(tab.layout == 'project_progress') {
+              //                 this.deleteUploadedLibraries(tab.contents.removeFileIds)
+              //                 this.doUpload(
+              //                     'App\\Entities\\Project',
+              //                     this.props.project.id,
+              //                     'progress',
+              //                     {
+              //                         date_upload_file: date_upload_file,
+              //                         date_sort: date_sort
+              //                     },
+              //                     tab.contents.progressImageFiles
+              //                 )
+              //             }
+              //         })
+              //         // Upload library images
+              //         await this.imageLibraryUpload.current.doUpload(
+              //             'App\\Entities\\Project',
+              //             this.props.project.id,
+              //             'gallery',
+              //         )
+              //     } else {
+              //         const createProjectResponse = await axios.post(`${config.api.baseUrl}/project/create`, values)
+              //         const createdProject = createProjectResponse.data
+              //         // Upload progress images
+              //         await values.tab_contents.map((tab) => {
+              //             if(tab.layout == 'project_progress') {
+              //                 this.deleteUploadedLibraries(tab.contents.removeFileIds)
+              //                 this.doUpload(
+              //                     'App\\Entities\\Project',
+              //                     createdProject.id,
+              //                     'progress',
+              //                     {
+              //                         date_upload_file: date_upload_file,
+              //                         date_sort: date_sort
+              //                     },
+              //                     tab.contents.progressImageFiles
+              //                 )
+              //             }
+              //         })
+              //         // Upload library images
+              //         await this.imageLibraryUpload.current.doUpload(
+              //             'App\\Entities\\Project',
+              //             createdProject.id,
+              //             'gallery',
+              //         )
+              //     }
+              //     // Redirect to posted project
+              //     window.location = '/project/posted'
+              // } catch (e) {
+              //     if (e.response && e.response.data) {
+              //         window.scrollTo(0, 0)
+              //         if (e.response.data.errors) {
+              //             const stateErrors = []
+              //             const errors = Object.values(e.response.data.errors)
+              //             for (let i = 0; i < errors.length; i++) {
+              //                 stateErrors.push(errors[i].join(' '))
+              //             }
+              //             this.setState({ errors: stateErrors })
+              //         } else {
+              //             this.setState({ errors: [e.response.data.message || 'Đã có lỗi sảy ra vui lòng thử lại'] })
+              //         }
+              //     }
+              // }
+              // this.setState({ loading: false})
 
-              if (_this.validate()) {
-                _context.next = 6;
-                break;
-              }
-
-              window.scrollTo(0, 0);
-              return _context.abrupt("return");
-
-            case 6:
-              values = Object(lodash__WEBPACK_IMPORTED_MODULE_11__["cloneDeep"])(_this.state.formValues);
-              values.project_overview = draftjs_to_html__WEBPACK_IMPORTED_MODULE_10___default()(Object(draft_js__WEBPACK_IMPORTED_MODULE_5__["convertToRaw"])(_this.state.formValues.project_overview.getCurrentContent()));
-              values.tab_contents = _this.tabManager.current.getTabContentsFormRawValues();
-              _context.prev = 9;
-
-              _this.setState({
-                loading: true
-              }); // Create project
-
-
-              if (!_this.isEditMode) {
-                _context.next = 20;
-                break;
-              }
-
-              _context.next = 14;
-              return axios__WEBPACK_IMPORTED_MODULE_8___default.a.put("".concat(_config__WEBPACK_IMPORTED_MODULE_9__["default"].api.baseUrl, "/project/").concat(_this.props.project.id), values);
-
-            case 14:
-              _context.next = 16;
-              return values.tab_contents.map(function (tab) {
-                if (tab.layout == 'project_progress') {
-                  _this.deleteUploadedLibraries(tab.contents.removeFileIds);
-
-                  _this.doUpload('App\\Entities\\Project', _this.props.project.id, 'progress', {
-                    date_upload_file: date_upload_file,
-                    date_sort: date_sort
-                  }, tab.contents.progressImageFiles);
-                }
-              });
-
-            case 16:
-              _context.next = 18;
-              return _this.imageLibraryUpload.current.doUpload('App\\Entities\\Project', _this.props.project.id, 'gallery');
-
-            case 18:
-              _context.next = 28;
-              break;
-
-            case 20:
-              _context.next = 22;
-              return axios__WEBPACK_IMPORTED_MODULE_8___default.a.post("".concat(_config__WEBPACK_IMPORTED_MODULE_9__["default"].api.baseUrl, "/project/create"), values);
-
-            case 22:
-              createProjectResponse = _context.sent;
-              createdProject = createProjectResponse.data; // Upload progress images
-
-              _context.next = 26;
-              return values.tab_contents.map(function (tab) {
-                if (tab.layout == 'project_progress') {
-                  _this.deleteUploadedLibraries(tab.contents.removeFileIds);
-
-                  _this.doUpload('App\\Entities\\Project', createdProject.id, 'progress', {
-                    date_upload_file: date_upload_file,
-                    date_sort: date_sort
-                  }, tab.contents.progressImageFiles);
-                }
-              });
-
-            case 26:
-              _context.next = 28;
-              return _this.imageLibraryUpload.current.doUpload('App\\Entities\\Project', createdProject.id, 'gallery');
-
-            case 28:
-              // Redirect to posted project
-              window.location = '/project/posted';
-              _context.next = 34;
-              break;
-
-            case 31:
-              _context.prev = 31;
-              _context.t0 = _context["catch"](9);
-
-              if (_context.t0.response && _context.t0.response.data) {
-                window.scrollTo(0, 0);
-
-                if (_context.t0.response.data.errors) {
-                  stateErrors = [];
-                  errors = Object.values(_context.t0.response.data.errors);
-
-                  for (i = 0; i < errors.length; i++) {
-                    stateErrors.push(errors[i].join(' '));
-                  }
-
-                  _this.setState({
-                    errors: stateErrors
-                  });
-                } else {
-                  _this.setState({
-                    errors: [_context.t0.response.data.message || 'Đã có lỗi sảy ra vui lòng thử lại']
-                  });
-                }
-              }
-
-            case 34:
-              _this.setState({
-                loading: false
-              });
-
-            case 35:
+            case 2:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[9, 31]]);
+      }, _callee);
     })));
 
     _defineProperty(_assertThisInitialized(_this), "onChangeInvestor", function (investorId, investorName) {
@@ -80339,7 +80309,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/BDS/resources/js/pages/project/form.js */"./resources/js/pages/project/form.js");
+module.exports = __webpack_require__(/*! /var/www/html/bds/resources/js/pages/project/form.js */"./resources/js/pages/project/form.js");
 
 
 /***/ })

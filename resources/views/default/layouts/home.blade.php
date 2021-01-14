@@ -3,12 +3,26 @@
     {{$config->title}}
 @endsection
 @section('head')
-    <meta name="keywords" content="{{$config->meta_keyword}}">
-    <meta name="description" content="{{$config->meta_description}}">
-    <meta property="og:url" content="{{$config->meta_url}}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{$config->title}}">
-    <meta property="og:description" content="{{$config->meta_description}}">
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+   <meta http-equiv="audience" content="general"><meta name="resource-type" content="document">
+   <meta name="abstract" content="Thông tin nhà đất Việt Nam">
+   <meta name="classification" content="Bất động sản Việt Nam">
+   <meta name="area" content="Nhà đất và bất động sản">
+   <meta name="placename" content="Việt Nam">
+   <meta name="author" content="Batdongsan.com.vn">
+   <meta name="copyright" content="©2007 Batdongsan.com.vn">
+   <meta name="owner" content="Batdongsan.com.vn">
+   <meta name="generator" content="Công ty Cổ phần PropertyGuru Việt Nam">
+   <meta name="distribution" content="Global">
+   <meta name="revisit-after" content="1 days">
+   <meta property="og:image" content="https://staticfile.batdongsan.com.vn/images/Logo/BDSLogo.jpg">
+   <meta name="robots" content="index,follow">
+   <meta name="keywords" content="{{$config->meta_keyword}}">
+   <meta name="description" content="{{$config->meta_description}}">
+   <meta property="og:url" content="{{$config->meta_url}}">
+   <meta property="og:type" content="website">
+   <meta property="og:title" content="{{$config->title}}">
+   <meta property="og:description" content="{{$config->meta_description}}">
 @endsection
 
 @section('content')
@@ -352,8 +366,8 @@
             <li class="moreBox">
                <div class="vip5">
                   <div class="product-thumb ">
-                     <a title="{{$item->title}}" href="#">
-                     <img src="{{$item->getThumbnail()}}" alt="{{$item->title}}">
+                     <a title="{{$item->title}}" href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}">
+                        <img src="{{$item->getThumbnail()}}" alt="{{$item->title}}">
                      </a>
                      <span class="product-feature">
                      </span>
@@ -361,7 +375,7 @@
                   </div>
                   <div class="home-product-bound">
                      <div class="p-title textTitle">
-                        <a href="#" title="{{$item->title}}">{{$item->title}}</a>
+                        <a href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}" title="{{$item->title}}">{{$item->title}}</a>
                      </div>
                      <div class="product-price">{{$item->price ? $item->price : 'Đang cập nhật'}} {{$item->price_unit_name}}</div>
                      <span class="ic_dot">·</span>
@@ -369,8 +383,8 @@
                      <div class="product-address">
                      @php $address = $item->address; @endphp
                      @if($address)
-                        <a href="/ban-nha-mat-pho-dong-da-hn" title="{{ $address->address }}">{{ $address->address }}</a>,
-                        <a href="/ban-nha-mat-pho-ha-noi" title="{{ $address->province->name }}">{{ $address->province->name }}</a>
+                        <a href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}" title="{{ $address->address }}">{{ $address->address }}</a>,
+                        <a href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}" title="{{ $address->province->name }}">{{ $address->province->name }}</a>
                      @endif
                      </div>
                      <div class="product-date">
@@ -388,7 +402,7 @@
             <li class="moreBox">
                <div class="vip5">
                   <div class="product-thumb ">
-                     <a title="{{$item->title}}" href="#">
+                     <a title="{{$item->title}}" href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}">
                      <img src="{{$item->getThumbnail()}}" alt="{{$item->title}}">
                      </a>
                      <span class="product-feature">
@@ -397,7 +411,7 @@
                   </div>
                   <div class="home-product-bound">
                      <div class="p-title textTitle">
-                        <a href="#" title="{{$item->title}}">{{$item->title}}</a>
+                        <a href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}" title="{{$item->title}}">{{$item->title}}</a>
                      </div>
                      <div class="product-price">{{$item->price ? $item->price : 'Đang cập nhật'}} {{$item->price_unit_name}}</div>
                      <span class="ic_dot">·</span>
@@ -405,8 +419,8 @@
                      <div class="product-address">
                      @php $address = $item->address; @endphp
                      @if($address)
-                        <a href="/ban-nha-mat-pho-dong-da-hn" title="{{ $address->address }}">{{ $address->address }}</a>,
-                        <a href="/ban-nha-mat-pho-ha-noi" title="{{ $address->province->name }}">{{ $address->province->name }}</a>
+                        <a href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}" title="{{ $address->address }}">{{ $address->address }}</a>,
+                        <a href="{{route('posts.detail.posts',['CategorySlug'=>$item->category->slug,'slug'=>$item->slug])}}" title="{{ $address->province->name }}">{{ $address->province->name }}</a>
                      @endif
                      </div>
                      <div class="product-date">

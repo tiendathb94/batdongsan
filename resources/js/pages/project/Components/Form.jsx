@@ -144,95 +144,96 @@ class Form extends Component {
 
     onClickSaveProjectButton = async () => {
         var times = $('.datepicker').val().split('/');
-        var date_upload_file = times[2] + '-' + times[1] + '-' + times[0];
-        var date_sort = date_upload_file.replace(/-/g, '')
+        console.log(times);
+        // var date_upload_file = times[2] + '-' + times[1] + '-' + times[0];
+        // var date_sort = date_upload_file.replace(/-/g, '')
 
-        if (!this.validate()) {
-            window.scrollTo(0, 0)
-            return
-        }
+        // if (!this.validate()) {
+        //     window.scrollTo(0, 0)
+        //     return
+        // }
 
-        const values = cloneDeep(this.state.formValues)
-        values.project_overview = draftToHtml(convertToRaw(this.state.formValues.project_overview.getCurrentContent()))
-        values.tab_contents = this.tabManager.current.getTabContentsFormRawValues()
-        try {
-            this.setState({ loading: true })
+        // const values = cloneDeep(this.state.formValues)
+        // values.project_overview = draftToHtml(convertToRaw(this.state.formValues.project_overview.getCurrentContent()))
+        // values.tab_contents = this.tabManager.current.getTabContentsFormRawValues()
+        // try {
+        //     this.setState({ loading: true })
 
-            // Create project
-            if (this.isEditMode) {
-                await axios.put(`${config.api.baseUrl}/project/${this.props.project.id}`, values)
+        //     // Create project
+        //     if (this.isEditMode) {
+        //         await axios.put(`${config.api.baseUrl}/project/${this.props.project.id}`, values)
 
-                // Upload progress images
-                await values.tab_contents.map((tab) => {
-                    if(tab.layout == 'project_progress') {
-                        this.deleteUploadedLibraries(tab.contents.removeFileIds)
-                        this.doUpload(
-                            'App\\Entities\\Project',
-                            this.props.project.id,
-                            'progress',
-                            {
-                                date_upload_file: date_upload_file,
-                                date_sort: date_sort
-                            },
-                            tab.contents.progressImageFiles
-                        )
-                    }
-                })
+        //         // Upload progress images
+        //         await values.tab_contents.map((tab) => {
+        //             if(tab.layout == 'project_progress') {
+        //                 this.deleteUploadedLibraries(tab.contents.removeFileIds)
+        //                 this.doUpload(
+        //                     'App\\Entities\\Project',
+        //                     this.props.project.id,
+        //                     'progress',
+        //                     {
+        //                         date_upload_file: date_upload_file,
+        //                         date_sort: date_sort
+        //                     },
+        //                     tab.contents.progressImageFiles
+        //                 )
+        //             }
+        //         })
 
-                // Upload library images
-                await this.imageLibraryUpload.current.doUpload(
-                    'App\\Entities\\Project',
-                    this.props.project.id,
-                    'gallery',
-                )
-            } else {
-                const createProjectResponse = await axios.post(`${config.api.baseUrl}/project/create`, values)
-                const createdProject = createProjectResponse.data
+        //         // Upload library images
+        //         await this.imageLibraryUpload.current.doUpload(
+        //             'App\\Entities\\Project',
+        //             this.props.project.id,
+        //             'gallery',
+        //         )
+        //     } else {
+        //         const createProjectResponse = await axios.post(`${config.api.baseUrl}/project/create`, values)
+        //         const createdProject = createProjectResponse.data
 
-                // Upload progress images
-                await values.tab_contents.map((tab) => {
-                    if(tab.layout == 'project_progress') {
-                        this.deleteUploadedLibraries(tab.contents.removeFileIds)
-                        this.doUpload(
-                            'App\\Entities\\Project',
-                            createdProject.id,
-                            'progress',
-                            {
-                                date_upload_file: date_upload_file,
-                                date_sort: date_sort
-                            },
-                            tab.contents.progressImageFiles
-                        )
-                    }
-                })
+        //         // Upload progress images
+        //         await values.tab_contents.map((tab) => {
+        //             if(tab.layout == 'project_progress') {
+        //                 this.deleteUploadedLibraries(tab.contents.removeFileIds)
+        //                 this.doUpload(
+        //                     'App\\Entities\\Project',
+        //                     createdProject.id,
+        //                     'progress',
+        //                     {
+        //                         date_upload_file: date_upload_file,
+        //                         date_sort: date_sort
+        //                     },
+        //                     tab.contents.progressImageFiles
+        //                 )
+        //             }
+        //         })
 
-                // Upload library images
-                await this.imageLibraryUpload.current.doUpload(
-                    'App\\Entities\\Project',
-                    createdProject.id,
-                    'gallery',
-                )
-            }
+        //         // Upload library images
+        //         await this.imageLibraryUpload.current.doUpload(
+        //             'App\\Entities\\Project',
+        //             createdProject.id,
+        //             'gallery',
+        //         )
+        //     }
 
-            // Redirect to posted project
-            window.location = '/project/posted'
-        } catch (e) {
-            if (e.response && e.response.data) {
-                window.scrollTo(0, 0)
-                if (e.response.data.errors) {
-                    const stateErrors = []
-                    const errors = Object.values(e.response.data.errors)
-                    for (let i = 0; i < errors.length; i++) {
-                        stateErrors.push(errors[i].join(' '))
-                    }
-                    this.setState({ errors: stateErrors })
-                } else {
-                    this.setState({ errors: [e.response.data.message || 'Đã có lỗi sảy ra vui lòng thử lại'] })
-                }
-            }
-        }
+        //     // Redirect to posted project
+        //     window.location = '/project/posted'
+        // } catch (e) {
+        //     if (e.response && e.response.data) {
+        //         window.scrollTo(0, 0)
+        //         if (e.response.data.errors) {
+        //             const stateErrors = []
+        //             const errors = Object.values(e.response.data.errors)
+        //             for (let i = 0; i < errors.length; i++) {
+        //                 stateErrors.push(errors[i].join(' '))
+        //             }
+        //             this.setState({ errors: stateErrors })
+        //         } else {
+        //             this.setState({ errors: [e.response.data.message || 'Đã có lỗi sảy ra vui lòng thử lại'] })
+        //         }
+        //     }
+        // }
 
-        this.setState({ loading: false})
+        // this.setState({ loading: false})
     }
 
     getAddressValue (fieldName) {

@@ -1,129 +1,53 @@
 <?php
 
 use App\Entities\Category;
+use App\Entities\Post;
 use App\Entities\Project;
 
 function navbarMenuItemsDefinition()
 {
+    // dd($arrItem);
     return [
         [
             'label' => 'Nhà đất bán',
-            'route_name' => '',
-            'parameter' => '',
-            'items' => [
-                [
-                    'label' => 'Bán căn hộ chung cư',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán nhà riêng',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán nhà biệt thự, liền kề',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán nhà mặt phố',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán đất nền dự án',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán đất',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán trang trại, khu nghỉ dưỡng',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán kho, nhà xưởng',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bán loại bất động sản khác',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-            ],
-        ],
+            'route_name' => 'posts.get.posts',
+            'parameter' => 'nha-dat-ban',
+            'items' => (function () {
+                $items = [];
+                $categorySellHouse = Category::whereSlug(Post::SELL_HOUSE)->first();
+                $categories = Category::query()->where('destination_entity', Post::class)->where('parent_id',$categorySellHouse->id)->get();
+                foreach ($categories as $category) {
+                    $items[] = [
+                        'label' => $category->name,
+                        'route_name' => 'posts.get.posts',
+                        'parameter' => ['categorySlug' => $category->slug],
+                        'items' => [],
+                    ];
+                }
 
+                return $items;
+            })()    
+        ],
         [
             'label' => 'Nhà đất cho thuê',
-            'route_name' => '',
-            'parameter' => '',
-            'items' => [
-                [
-                    'label' => 'Cho thuê căn hộ chung cư',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Cho thuê nhà riêng',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Cho thuê nhà mặt phố',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Cho thuê nhà trọ, phòng trọ',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Cho thuê văn phòng',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Cho thuê cửa hàng - ki ốt',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Cho thuê kho, nhà xưởng, đất',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Cho thuê loại bất động sản khác',
-                    'route_name' => '',
-                    'parameter' => '',
-                    'items' => []
-                ],
-            ],
-        ],
+            'route_name' => 'posts.get.posts',
+            'parameter' => 'nha-dat-cho-thue',
+            'items' => (function () {
+                $items = [];
+                $categorySellHouse = Category::whereSlug(Post::LEASE_HOUSE)->first();
+                $categories = Category::query()->where('destination_entity', Post::class)->where('parent_id',$categorySellHouse->id)->get();
+                foreach ($categories as $category) {
+                    $items[] = [
+                        'label' => $category->name,
+                        'route_name' => 'posts.get.posts',
+                        'parameter' => ['categorySlug' => $category->slug],
+                        'items' => [],
+                    ];
+                }
 
+                return $items;
+            })()    
+        ],
         [
             'label' => 'Dự án',
             'parameter' => '',
@@ -143,7 +67,6 @@ function navbarMenuItemsDefinition()
                 return $items;
             })(),
         ],
-
         [
             'label' => 'Cần mua - Cần thuê',
             'route_name' => '',
@@ -152,122 +75,45 @@ function navbarMenuItemsDefinition()
                 [
                     'label' => 'Nhà đất cần mua',
                     'route_name' => '',
-                    'parameter' => '',
-                    'items' => [
-                        [
-                            'label' => 'Mua căn hộ chung cư',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua nhà riêng',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua nhà biệt thự, liền kề',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua nhà mặt phố',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua đất nền dự án',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua đất',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua trang trại, khu nghỉ dưỡng',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua kho, nhà xưởng',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Mua loại bất động sản khác',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                    ]
+                    'parameter' => 'nha-dat-can-mua',
+                    'items' => (function () {
+                        $items = [];
+                        $categorySellHouse = Category::whereSlug(Post::HOUSE_BUY)->first();
+                        $categories = Category::query()->where('destination_entity', Post::class)->where('parent_id',$categorySellHouse->id)->get();
+                        foreach ($categories as $category) {
+                            $items[] = [
+                                'label' => $category->name,
+                                'route_name' => 'posts.get.posts',
+                                'parameter' => ['categorySlug' => $category->slug],
+                                'items' => [],
+                            ];
+                        }
+        
+                        return $items;
+                    })()
                 ],
                 [
                     'label' => 'Nhà đất cần thuê',
                     'route_name' => '',
-                    'parameter' => '',
-                    'items' => [
-                        [
-                            'label' => 'Cần thuê căn hộ chung cư',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Cần thuê nhà riêng',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Cần thuê nhà mặt phố',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Cần thuê nhà trọ, phòng trọ',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Cần thuê văn phòng',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Cần thuê cửa hàng - ki ốt',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Cần thuê kho, nhà xưởng, đất',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Cần thuê loại bất động sản khác',
-                            'route_name' => '',
-                            'parameter' => '',
-                            'items' => []
-                        ],
-                    ]
+                    'parameter' => 'nha-dat-can-thue',
+                    'items' => (function () {
+                        $items = [];
+                        $categorySellHouse = Category::whereSlug(Post::HOUSE_RENT)->first();
+                        $categories = Category::query()->where('destination_entity', Post::class)->where('parent_id',$categorySellHouse->id)->get();
+                        foreach ($categories as $category) {
+                            $items[] = [
+                                'label' => $category->name,
+                                'route_name' => 'posts.get.posts',
+                                'parameter' => ['categorySlug' => $category->slug],
+                                'items' => [],
+                            ];
+                        }
+        
+                        return $items;
+                    })() 
                 ],
             ],
         ],
-
         [
             'label' => 'Tin tức',
             'route_name' => 'news.index',

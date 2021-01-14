@@ -19,6 +19,21 @@ use DB;
 
 class PostController extends Controller
 {
+    public function postList($slug){
+        $category = Category::query()->where('destination_entity', Post::class)->whereSlug($slug)->first();
+        if(is_null($category->parent_id) OR $category->parent_id == 0){
+            $post = Post::query()->where('form',$category->id)->get();
+        }else{
+            $post = Post::query()->where('category_id',$category->id)->get();
+        }
+        return view('default.pages.posts.list_post',["category" => $category, "post" => $post]);
+    }
+    public function postDetail($categorySlug, $postSlug){    
+        $category = Category::whereSlug($categorySlug)->first();
+        $post = Post::with('category')->where('form',$category->id)->where('slug',$postSlug)->first();
+        return view('default.pages.posts.post_detail', ['post' => $post]);
+    }
+
     public function createSell()
     {
         return view($this->_config['view']);
@@ -101,7 +116,7 @@ class PostController extends Controller
         $checkPermission = checkRule($user);
         $categorySellHouse = Category::whereSlug(Post::SELL_HOUSE)->first();
         $categoryLeaseHouse = Category::whereSlug(Post::LEASE_HOUSE)->first();
-        $posts = Post::whereIn('form', [$categorySellHouse->id, $categoryLeaseHouse->id]);
+        $posts = Post::with('category')->whereIn('form', [$categorySellHouse->id, $categoryLeaseHouse->id]);
         if(!$checkPermission){
             $posts = $posts->where('user_id',$user_id);
         }
@@ -118,7 +133,7 @@ class PostController extends Controller
         $checkPermission = checkRule($user);
         $categoryBuyHouse = Category::whereSlug(Post::HOUSE_BUY)->first();
         $categoryRentHouse = Category::whereSlug(Post::HOUSE_RENT)->first();
-        $posts = Post::whereIn('form', [$categoryBuyHouse->id, $categoryRentHouse->id]);
+        $posts = Post::with('category')->whereIn('form', [$categoryBuyHouse->id, $categoryRentHouse->id]);
         if(!$checkPermission){
             $posts = $posts->where('user_id',$user_id);
         }

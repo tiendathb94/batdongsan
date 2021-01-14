@@ -23,7 +23,6 @@
     "/js/pages/news/editor.js": "/js/pages/news/editor.js",
     "/js/pages/news/project.js": "/js/pages/news/project.js",
     "/js/pages/posts/create_sell.js": "/js/pages/posts/create_sell.js",
-    "/js/pages/posts/edit_sell.js": "/js/pages/posts/edit_sell.js",
     "/js/pages/project/form.js": "/js/pages/project/form.js",
     "/js/pages/project/manage.js": "/js/pages/project/manage.js",
     "/js/pages/project/search.js": "/js/pages/project/search.js",

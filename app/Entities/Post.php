@@ -108,8 +108,24 @@ class Post extends Model
         return '/images/placeholder.png';
     }
 
+    public function getImages()
+    {
+        $arr = [];
+        if ($this->imageLibraries && $this->imageLibraries->count() > 0) {
+            foreach ($this->imageLibraries as $key => $value) {
+                $filePath = $value->file_path;
+                $arr[] = "/storage/$filePath";
+            }
+        }
+        return $arr;
+    }
+
     public function category()
     {
         return $this->belongsTo('App\Entities\Category','form');
+    }
+    public function project()
+    {
+        return $this->belongsTo(Project::class,'project_id');
     }
 }

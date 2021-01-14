@@ -59646,7 +59646,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/BDS/resources/js/pages/news/project.js */"./resources/js/pages/news/project.js");
+module.exports = __webpack_require__(/*! /var/www/html/bds/resources/js/pages/news/project.js */"./resources/js/pages/news/project.js");
 
 
 /***/ })
