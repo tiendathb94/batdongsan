@@ -33,6 +33,6 @@ Route::group(['as' => 'posts.','middleware' => ['auth']], function () {
         Route::post('district','Web\PostController@getDistrict')->name('district');
         Route::post('ward','Web\PostController@getWard')->name('ward');
     });
-    Route::get('/posts/{categorySlug}', 'Web\PostController@postList')->name('get.posts');
-    Route::get('/posts-detail/{CategorySlug}/{slug}','Web\PostController@postDetail')->name('detail.posts');
 });
+Route::get('/posts/{categorySlug}', 'Web\PostController@postList')->name('posts.get.posts');
+Route::get('/posts-detail/{CategorySlug}/{slug}','Web\PostController@postDetail')->name('posts.detail.posts');
