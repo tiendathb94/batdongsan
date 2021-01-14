@@ -146,6 +146,16 @@ $("#hometab3").tabslet({
     active: 1,
     animation: !0
 });
+$("#hometab4").tabslet({
+    mouseevent: "hover",
+    attribute: "data-index",
+    container: $("#hometab4").find(".news-show"),
+    element_container: $("#hometab4").find(".list-news"),
+    autorotate: !0,
+    delay: 4e3,
+    active: 1,
+    animation: !0
+});
 
 $(window).on('resize load', function() {
     if ($(window).width() <= 768) { 
