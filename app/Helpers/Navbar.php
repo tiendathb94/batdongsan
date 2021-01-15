@@ -74,7 +74,7 @@ function navbarMenuItemsDefinition()
             'items' => [
                 [
                     'label' => 'Nhà đất cần mua',
-                    'route_name' => '',
+                    'route_name' => 'posts.get.posts',
                     'parameter' => 'nha-dat-can-mua',
                     'items' => (function () {
                         $items = [];
@@ -94,7 +94,7 @@ function navbarMenuItemsDefinition()
                 ],
                 [
                     'label' => 'Nhà đất cần thuê',
-                    'route_name' => '',
+                    'route_name' => 'posts.get.posts',
                     'parameter' => 'nha-dat-can-thue',
                     'items' => (function () {
                         $items = [];
