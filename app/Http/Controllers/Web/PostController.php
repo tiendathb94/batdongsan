@@ -22,11 +22,11 @@ class PostController extends Controller
     public function postList($slug){
         $category = Category::query()->where('destination_entity', Post::class)->whereSlug($slug)->first();
         if(is_null($category->parent_id) OR $category->parent_id == 0){
-            $post = Post::query()->where('form',$category->id)->get();
+            $posts = Post::query()->where('form',$category->id)->get();
         }else{
-            $post = Post::query()->where('category_id',$category->id)->get();
+            $posts = Post::query()->where('category_id',$category->id)->get();
         }
-        return view('default.pages.posts.list_post',["category" => $category, "post" => $post]);
+        return view('default.pages.posts.listing_post',["category" => $category, "posts" => $posts]);
     }
     public function postDetail($categorySlug, $postSlug){    
         $category = Category::whereSlug($categorySlug)->first();
@@ -193,6 +193,7 @@ class PostController extends Controller
             $createPost->address()->create($address);
             $createPost->imageLibraries()->create([
                 'image_libraryable_type' => Post::class,
+                'library_type'           => Post::class,
                 'file_path' => str_replace('public', '', $uploadedFilePath),
                 'user_id' => $user_id,
                 'meta_data' => '',

@@ -50397,7 +50397,9 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         className: "click_pr"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Lo\u1EA1i d\u1EF1 \xE1n")), this.state.projectCategories.map(function (category) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-          onClick: "selected({category.name})",
+          onClick: function onClick() {
+            console.log('123');
+          },
           key: category.id,
           value: category.id
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, category.name));

@@ -154,7 +154,9 @@ class FormSearchHome extends Component {
                                 <ul ref={this.categoryProjectRef} onChange={this.onChangeSelect} name="categoryId" id="">
                                     <li id="3232" className="click_pr"><span>Loại dự án</span></li>
                                     {
-                                        this.state.projectCategories.map((category) => (<li onClick="selected({category.name})" key={category.id} value={category.id}><span>{category.name}</span></li>))
+                                        this.state.projectCategories.map((category) => (<li onClick={() => {
+                                            console.log('123');
+                                        }} key={category.id} value={category.id}><span>{category.name}</span></li>))
                                     }
                                 </ul>
                             </div>
