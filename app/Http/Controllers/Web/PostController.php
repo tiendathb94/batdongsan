@@ -222,4 +222,10 @@ class PostController extends Controller
         ];
         return response()->json($respon);
     }
+
+    public function deleteSell($id){
+        $post = Post::find($id);
+        $post->delete();
+        return $post;
+    }
 }

@@ -122,6 +122,23 @@
                     }
                 })
             })
+            $('.delete-post-button').click(function () {
+                let url = $(this).data('url');
+                let item = $(this);
+                var cf = confirm('Bạn có chắc chắn muốn xóa thành viên này không?');
+                if(cf == true){
+                    $.ajax({
+                        url: url,
+                        method: 'get',
+                        success: function(data){
+                            if(data){
+                                console.log(data);
+                                item.parents("tr").remove();
+                            }
+                        }
+                    })
+                }
+            })
         })
     </script>
 @endpush
