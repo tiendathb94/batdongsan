@@ -1,7 +1,7 @@
 @extends('default.layouts.default')
 
 @section('page_title')
-    {{$post->name}}
+    {{$post->title}}
 @endsection
 
 @section('content')
