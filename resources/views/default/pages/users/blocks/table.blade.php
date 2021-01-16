@@ -125,7 +125,7 @@
             $('.delete-post-button').click(function () {
                 let url = $(this).data('url');
                 let item = $(this);
-                var cf = confirm('Bạn có chắc chắn muốn xóa thành viên này không?');
+                var cf = confirm('Bạn có chắc chắn muốn xóa bài đăng này không?');
                 if(cf == true){
                     $.ajax({
                         url: url,
