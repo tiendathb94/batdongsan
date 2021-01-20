@@ -49,15 +49,24 @@ INSERT INTO `addresses` (`id`, `addressable_type`, `addressable_id`, `province_i
 --
 
 CREATE TABLE `categories` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `thumbnail` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `destination_entity` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `parent_id` bigint(20) UNSIGNED DEFAULT NULL
+  `parent_id` bigint(20) unsigned DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_content` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `categories_name_destination_entity_unique` (`name`,`destination_entity`),
+  KEY `categories_slug_index` (`slug`),
+  KEY `categories_name_destination_entity_index` (`name`,`destination_entity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 --
 -- Dumping data for table `categories`
