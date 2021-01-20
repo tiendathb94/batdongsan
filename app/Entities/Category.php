@@ -8,10 +8,10 @@ use App\Entities\Statistic;
 
 class Category extends Model
 {
-    protected $fillable = [
-        'name', 'thumbnail', 'parent_id'
-    ];
-
+    // protected $fillable = [
+    //     'name', 'thumbnail', 'parent_id'
+    // ];
+    protected $guarded = [];
     protected $appends = ['total_views_last_week'];
 
     public function news()
@@ -33,5 +33,4 @@ class Category extends Model
     {
         return $this->hasMany(Post::class);
     }
-    
 }
