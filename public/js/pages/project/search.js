@@ -49861,7 +49861,8 @@ var SearchPrice = /*#__PURE__*/function (_Component) {
       }, "M\u1EE9c gi\xE1")), this.state.isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "d-flex justify-content-center p-2 border"
+        className: "d-flex justify-content-center p-2 border",
+        style: "color:black!important"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "number",
         onKeyUp: this.changePrice,
@@ -50502,7 +50503,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/bds/resources/js/pages/project/search.js */"./resources/js/pages/project/search.js");
+module.exports = __webpack_require__(/*! /var/www/html/Bds/resources/js/pages/project/search.js */"./resources/js/pages/project/search.js");
 
 
 /***/ })

@@ -102,7 +102,7 @@ class SearchPrice extends Component {
                 {
                     this.state.isShow && (
                         <div className="bg-white">
-                            <div className="d-flex justify-content-center p-2 border">
+                            <div className="d-flex justify-content-center p-2 border" style="color:black!important">
                                 <input type="number" onKeyUp={this.changePrice} className="text-center form-control" name="fromPrice"/>
                                 <span className="mx-2"> - </span>
                                 <input type="number" onKeyUp={this.changePrice} className="text-center form-control" name="toPrice"/>

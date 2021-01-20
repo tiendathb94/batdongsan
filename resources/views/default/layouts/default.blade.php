@@ -139,13 +139,13 @@
             $(this).addClass('actived');
         });
 
-        $('.click_pr').click(function(e) {
-            var str = $(this).text();
-            document.getElementById('lblCurrCate').innerHTML = str;
-            document.getElementById('lblCurrCate').val = str;
-            $('.advance-select-options').toggle('show');
-            //toggleOptions();
-        });
+        // $('.click_pr').click(function(e) {
+        //     var str = $(this).text();
+        //     document.getElementById('lblCurrCate').innerHTML = str;
+        //     document.getElementById('lblCurrCate').val = str;
+        //     $('.advance-select-options').toggle('show');
+        //     //toggleOptions();
+        // });
     </script>
 </body>
 </html>

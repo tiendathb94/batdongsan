@@ -77847,7 +77847,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/bds/resources/js/pages/posts/create_sell.js */"./resources/js/pages/posts/create_sell.js");
+module.exports = __webpack_require__(/*! /var/www/html/Bds/resources/js/pages/posts/create_sell.js */"./resources/js/pages/posts/create_sell.js");
 
 
 /***/ })

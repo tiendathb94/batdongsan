@@ -179,6 +179,7 @@ class ProjectController extends Controller
 
     public function showProjectsInCategory($categorySlug, Request $request)
     {
+        $keyword = $request->keyword;
         $category = Category::query()
             ->where('destination_entity', '=', Project::class)
             ->where('slug', '=', $categorySlug)
@@ -190,6 +191,11 @@ class ProjectController extends Controller
         $projects = Project::query()
             ->where('status', '=', Project::StatusApproved)
             ->where('category_id', '=', $category->id)
+            ->where(function($item) use($keyword){
+                if($keyword){
+                    $item->where('long_name', 'like', "%$keyword%");
+                }
+            })
             ->whereHas('address', function ($query) use($request) {
                 if($request->province_id) {
                     $query->where('province_id', $request->province_id);

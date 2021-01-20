@@ -10,7 +10,7 @@ class FormSearchHome extends Component {
         super(props)
 
         this.state = {
-            isMoreSearch: false,
+            isMoreSearch: true,
             keyword: '',
             projectCategories: [],
             categoryId: '',
@@ -22,6 +22,7 @@ class FormSearchHome extends Component {
             priceFrom: '',
             priceTo: '',
             project: '',
+            category_project_name: ''
         }
         this.inputSearchRef = React.createRef()
         this.categoryProjectRef = React.createRef()
@@ -127,14 +128,19 @@ class FormSearchHome extends Component {
     searchProject = () => {
         const { project, provinceId, districtId, projectCategories, categoryId, priceFrom, priceTo } = this.state
         const keyword = this.inputSearchRef.current.value
+        console.log(project.category);
         if(project && project.slug) {
             window.location = `/du-an/${project.category.slug}/${project.slug}`
         } else if (categoryId) {
             const category = projectCategories.filter(category => category.id == categoryId)[0]
-            window.location = `/du-an/${category.slug}?province_id=${provinceId}&district_id=${districtId}&priceFrom=${priceFrom}&priceTo=${priceTo}`
+            window.location = `/du-an/${category.slug}?keyword=${keyword}&province_id=${provinceId}&district_id=${districtId}&priceFrom=${priceFrom}&priceTo=${priceTo}`
         } else if (keyword) {
             window.location = `/tim-kiem-du-an?keyword=${keyword}`
         }
+    }
+    changeProjectName = (category) => {
+        this.setState({categoryId: category.id, category_project_name: category.name})
+        $('.advance-select-options').toggle('show');
     }
 
     render () {
@@ -148,15 +154,12 @@ class FormSearchHome extends Component {
                     <div className="home-search-control">
                         <div className="search-cate">
                             <div className="select-custom">
-                                <p id="lblCurrCate">Loại nhà đất</p>
+                                <p id="lblCurrCate">{this.state.category_project_name ? this.state.category_project_name : "Loại nhà đất"}</p>
                             </div>
                             <div id="divCatagoryReOptions" className="advance-select-options">
-                                <ul ref={this.categoryProjectRef} onChange={this.onChangeSelect} name="categoryId" id="">
-                                    <li id="3232" className="click_pr"><span>Loại dự án</span></li>
+                                <ul>
                                     {
-                                        this.state.projectCategories.map((category) => (<li onClick={() => {
-                                            console.log('123');
-                                        }} key={category.id} value={category.id}><span>{category.name}</span></li>))
+                                        this.state.projectCategories.map((category) => (<li onClick={() => this.changeProjectName(category)} key={category.id} value={category.id}><span>{category.name}</span></li>))
                                     }
                                 </ul>
                             </div>

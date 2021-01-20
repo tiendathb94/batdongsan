@@ -49861,7 +49861,8 @@ var SearchPrice = /*#__PURE__*/function (_Component) {
       }, "M\u1EE9c gi\xE1")), this.state.isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "d-flex justify-content-center p-2 border"
+        className: "d-flex justify-content-center p-2 border",
+        style: "color:black!important"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "number",
         onKeyUp: this.changePrice,
@@ -50321,6 +50322,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
           priceFrom = _this$state.priceFrom,
           priceTo = _this$state.priceTo;
       var keyword = _this.inputSearchRef.current.value;
+      console.log(project.category);
 
       if (project && project.slug) {
         window.location = "/du-an/".concat(project.category.slug, "/").concat(project.slug);
@@ -50328,14 +50330,23 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         var category = projectCategories.filter(function (category) {
           return category.id == categoryId;
         })[0];
-        window.location = "/du-an/".concat(category.slug, "?province_id=").concat(provinceId, "&district_id=").concat(districtId, "&priceFrom=").concat(priceFrom, "&priceTo=").concat(priceTo);
+        window.location = "/du-an/".concat(category.slug, "?keyword=").concat(keyword, "&province_id=").concat(provinceId, "&district_id=").concat(districtId, "&priceFrom=").concat(priceFrom, "&priceTo=").concat(priceTo);
       } else if (keyword) {
         window.location = "/tim-kiem-du-an?keyword=".concat(keyword);
       }
     });
 
+    _defineProperty(_assertThisInitialized(_this), "changeProjectName", function (category) {
+      _this.setState({
+        categoryId: category.id,
+        category_project_name: category.name
+      });
+
+      $('.advance-select-options').toggle('show');
+    });
+
     _this.state = {
-      isMoreSearch: false,
+      isMoreSearch: true,
       keyword: '',
       projectCategories: [],
       categoryId: '',
@@ -50346,7 +50357,8 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
       districtId: '',
       priceFrom: '',
       priceTo: '',
-      project: ''
+      project: '',
+      category_project_name: ''
     };
     _this.inputSearchRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
     _this.categoryProjectRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
@@ -50365,6 +50377,8 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "home-search-tool"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
@@ -50384,21 +50398,13 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         className: "select-custom"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
         id: "lblCurrCate"
-      }, "Lo\u1EA1i nh\xE0 \u0111\u1EA5t")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.state.category_project_name ? this.state.category_project_name : "Loại nhà đất")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         id: "divCatagoryReOptions",
         className: "advance-select-options"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        ref: this.categoryProjectRef,
-        onChange: this.onChangeSelect,
-        name: "categoryId",
-        id: ""
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-        id: "3232",
-        className: "click_pr"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", null, "Lo\u1EA1i d\u1EF1 \xE1n")), this.state.projectCategories.map(function (category) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, this.state.projectCategories.map(function (category) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
           onClick: function onClick() {
-            console.log('123');
+            return _this2.changeProjectName(category);
           },
           key: category.id,
           value: category.id
@@ -50519,7 +50525,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/bds/resources/js/pages/project/searchHome.js */"./resources/js/pages/project/searchHome.js");
+module.exports = __webpack_require__(/*! /var/www/html/Bds/resources/js/pages/project/searchHome.js */"./resources/js/pages/project/searchHome.js");
 
 
 /***/ })

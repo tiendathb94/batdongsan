@@ -66094,25 +66094,25 @@ if (document.getElementById('example')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/bds/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/project/form.scss */"./resources/sass/pages/project/form.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/investor/form.scss */"./resources/sass/pages/investor/form.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/users/index.scss */"./resources/sass/pages/users/index.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/auth/reset-password.scss */"./resources/sass/pages/auth/reset-password.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/layouts/personal.scss */"./resources/sass/layouts/personal.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/project/project-detail.scss */"./resources/sass/pages/project/project-detail.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/news/show.scss */"./resources/sass/pages/news/show.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/partials/navbar.scss */"./resources/sass/partials/navbar.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/news/index.scss */"./resources/sass/pages/news/index.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/partials/company-detail.scss */"./resources/sass/partials/company-detail.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/partials/project/project-items-card.scss */"./resources/sass/partials/project/project-items-card.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/partials/project/project-items-row.scss */"./resources/sass/partials/project/project-items-row.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/partials/project/block-show-categories-with-province.scss */"./resources/sass/partials/project/block-show-categories-with-province.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/project/project-landing.scss */"./resources/sass/pages/project/project-landing.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/pages/project/project-category.scss */"./resources/sass/pages/project/project-category.scss");
-__webpack_require__(/*! /var/www/html/bds/resources/sass/partials/project/block-search.scss */"./resources/sass/partials/project/block-search.scss");
-module.exports = __webpack_require__(/*! /var/www/html/bds/resources/sass/pages/posts/create_sell.scss */"./resources/sass/pages/posts/create_sell.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/project/form.scss */"./resources/sass/pages/project/form.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/investor/form.scss */"./resources/sass/pages/investor/form.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/users/index.scss */"./resources/sass/pages/users/index.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/auth/reset-password.scss */"./resources/sass/pages/auth/reset-password.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/layouts/personal.scss */"./resources/sass/layouts/personal.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/project/project-detail.scss */"./resources/sass/pages/project/project-detail.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/news/show.scss */"./resources/sass/pages/news/show.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/partials/navbar.scss */"./resources/sass/partials/navbar.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/news/index.scss */"./resources/sass/pages/news/index.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/partials/company-detail.scss */"./resources/sass/partials/company-detail.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/partials/project/project-items-card.scss */"./resources/sass/partials/project/project-items-card.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/partials/project/project-items-row.scss */"./resources/sass/partials/project/project-items-row.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/partials/project/block-show-categories-with-province.scss */"./resources/sass/partials/project/block-show-categories-with-province.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/project/project-landing.scss */"./resources/sass/pages/project/project-landing.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/project/project-category.scss */"./resources/sass/pages/project/project-category.scss");
+__webpack_require__(/*! /var/www/html/Bds/resources/sass/partials/project/block-search.scss */"./resources/sass/partials/project/block-search.scss");
+module.exports = __webpack_require__(/*! /var/www/html/Bds/resources/sass/pages/posts/create_sell.scss */"./resources/sass/pages/posts/create_sell.scss");
 
 
 /***/ })
