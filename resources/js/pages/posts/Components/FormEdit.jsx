@@ -295,7 +295,7 @@ class Form extends Component {
                 loading: false,
                 message: 'Cập nhật thành công'
             })
-            // window.location.href = '/quan-ly-tin-rao-vat-ban-nha-dat';
+            window.location.href = '/quan-ly-tin-rao-vat-ban-nha-dat';
         } catch (e) {
             if (e.response && e.response.data) {
                 window.scrollTo(0, 0)

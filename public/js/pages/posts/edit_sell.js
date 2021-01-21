@@ -78996,14 +78996,14 @@ var Form = /*#__PURE__*/function (_Component) {
               _this.setState({
                 loading: false,
                 message: 'Cập nhật thành công'
-              }); // window.location.href = '/quan-ly-tin-rao-vat-ban-nha-dat';
+              });
 
-
-              _context.next = 26;
+              window.location.href = '/quan-ly-tin-rao-vat-ban-nha-dat';
+              _context.next = 27;
               break;
 
-            case 23:
-              _context.prev = 23;
+            case 24:
+              _context.prev = 24;
               _context.t0 = _context["catch"](11);
 
               if (_context.t0.response && _context.t0.response.data) {
@@ -79035,12 +79035,12 @@ var Form = /*#__PURE__*/function (_Component) {
                 }, 5000);
               }
 
-            case 26:
+            case 27:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[11, 23]]);
+      }, _callee, null, [[11, 24]]);
     })));
 
     _this.state = {
