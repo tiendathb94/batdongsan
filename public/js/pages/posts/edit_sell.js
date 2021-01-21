@@ -77953,19 +77953,17 @@ var CategoryField = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, this.props.label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
-        onChange: function onChange() {
-          return _this2.onChange;
-        },
+        onChange: this.onChange,
         name: "category_id",
         className: classnames__WEBPACK_IMPORTED_MODULE_5___default()({
           'form-control': true,
           'is-invalid': !!this.state.message
-        }),
-        value: this.props.value
+        })
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
         value: ""
       }, "-- ", this.props.label, " --"), this.state.categories && this.state.categories.map(function (category) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+          selected: category.id == _this2.props.value ? true : false,
           value: category.id,
           key: category.id
         }, category.name);
