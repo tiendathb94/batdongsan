@@ -7,4 +7,6 @@ Route::group(['prefix' => 'posts'], function () {
     Route::post('', 'Api\PostController@store');
     Route::get('{id}/change-status', 'Api\PostController@changeStatus')->name('posts.change_status');
     Route::get('{id}/change-approval', 'Api\PostController@changeApproval')->name('posts.change_approval');
+
+    Route::put('{id}','Api\PostController@updatePost')->name('posts.update');
 });

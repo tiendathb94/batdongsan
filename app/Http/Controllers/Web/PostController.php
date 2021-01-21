@@ -83,6 +83,10 @@ class PostController extends Controller
         }
         return redirect(route("posts.list_sell"));
     }
+    public function editSell($id){
+        $post = Post::with('address')->with('category')->with('project')->with('imageLibraries')->find($id);
+        return view($this->_config['view'],['post' => $post]);
+    }
     public function editPost($id)
     {
         $provinces = Province::all();

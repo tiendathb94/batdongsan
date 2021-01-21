@@ -47,11 +47,12 @@ class CategoryField extends Component {
             <div className="form-group">
                 <label>{this.props.label}</label>
                 <select
-                    onChange={this.onChange}
+                    onChange={() => this.onChange}
                     name="category_id"
                     className={classnames({ 'form-control': true, 'is-invalid': !!this.state.message })}
+                    value={this.props.value}
                 >
-                    <option>-- {this.props.label} --</option>
+                    <option value="">-- {this.props.label} --</option>
                     {
                         this.state.categories && this.state.categories.map((category) => (
                             <option value={category.id} key={category.id}>{category.name}</option>

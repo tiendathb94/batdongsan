@@ -50525,7 +50525,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/Bds/resources/js/pages/project/searchHome.js */"./resources/js/pages/project/searchHome.js");
+module.exports = __webpack_require__(/*! /var/www/html/BDS/resources/js/pages/project/searchHome.js */"./resources/js/pages/project/searchHome.js");
 
 
 /***/ })

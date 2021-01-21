@@ -20,7 +20,6 @@ class ImageLibraryController extends Controller
         $libraryableId = $request->get('libraryable_id');
         $libraryType = $request->get('library_type');
         $metaData = $request->get('meta_data');
-
         $targetEntity = $this->getTargetEntity($libraryableType, $libraryableId);
         if (!$targetEntity) {
             return response()->json(['Target entity không tồn tại hoặc chưa được hỗ trợ']);

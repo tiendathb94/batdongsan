@@ -24,6 +24,7 @@ mix
     .react('resources/js/pages/news/project.js', 'public/js/pages/news')
     .react('resources/js/pages/investor/manage.js', 'public/js/pages/investor')
     .react('resources/js/pages/posts/create_sell.js', 'public/js/pages/posts')
+    .react('resources/js/pages/posts/edit_sell.js', 'public/js/pages/posts')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/pages/project/form.scss', 'public/css/pages/project')
     .sass('resources/sass/pages/investor/form.scss', 'public/css/pages/investor')

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Entities\Post;
 use App\Entities\Address;
 use App\Entities\Category;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -64,4 +65,69 @@ class PostController extends Controller
         }
         $post->save();
     } 
+
+    public function updatePost($id, Request $request){
+        $post = Post::find($id);
+        if (!$post) {
+            return response()->json(['message' => 'Bài đăng bạn yêu cầu không tồn tại'], 400);
+        }
+        try {
+            DB::beginTransaction();
+
+            $allowFields = [
+                'title', 'slug', 'form', 'content',
+                'price_unit', 'facade', 'way_in', 'direction_house', 'direction_balcony',
+                'number_of_floors', 'number_of_bedroom', 'number_of_toilet',
+                'furniture','legal_information','project_id','total_area','category_id',
+                'price','total_price'
+            ];
+            foreach ($allowFields as $field) {
+                if (isset($request->{$field})) {
+                    $post->{$field} = $request->{$field};
+                }
+            }
+
+            // Save project
+            $post->save();
+
+            // Save address
+            if ($request->has('address')) {
+                $address       = $request->address;
+                $addressEntity = $post->address;
+
+                if ($addressEntity) {
+                    foreach (['province_id', 'district_id', 'ward_id', 'address'] as $field) {
+                        $addressEntity->{$field} = $address[$field];
+                    }
+
+                    $addressEntity->save();
+                } else {
+                    $post->address()->create($address);
+                }
+            }
+
+            // Save tab contents
+            // $tabContents = $validated['tab_contents'];
+            // if ($tabContents) {
+            //     foreach ($tabContents as $tabContent) {
+            //         $tabContentId = !empty($tabContent['id']) ? $tabContent['id'] : 0;
+            //         $tabContentEntity = $post->tabs()->findOrNew($tabContentId);
+            //         foreach (['name', 'layout', 'contents'] as $field) {
+            //             $tabContentEntity->{$field === 'layout' ? 'template' : $field} = $tabContent[$field];
+            //         }
+
+            //         $tabContentEntity->save();
+            //     }
+            // }
+
+            DB::commit();
+
+            return response()->noContent();
+        } catch (\Exception $e) {
+            Log::info($e);
+            DB::rollback();
+        }
+
+        return response()->json(['message' => 'Đã có lỗi khi lưu dự án'], 500);
+    }
 }

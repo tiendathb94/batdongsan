@@ -241,7 +241,7 @@ class Form extends Component {
                     }
                     this.setState({ errors: stateErrors, loading: false, })
                 } else {
-                    this.setState({ errors: e.response.data.message || 'Đã có lỗi sảy ra vui lòng thử lại', loading: false, })
+                    this.setState({ errors: e.response.data.message || 'Đã có lỗi xảy ra vui lòng thử lại', loading: false, })
                 }
                 setTimeout(() => {
                     this.setState({

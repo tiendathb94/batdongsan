@@ -7,12 +7,9 @@ Route::group(['as' => 'posts.','middleware' => ['auth']], function () {
     Route::get('quan-ly-tin-rao-vat-ban-nha-dat', 'Web\PostController@listSell')
         ->defaults('_config', ['view' => 'default.pages.posts.list_sell'])
         ->name('list_sell');
-    Route::get('quan-ly-tin-rao-vat-ban-nha-dat/{id}', 'Web\PostController@editPost')
+    Route::get('quan-ly-tin-rao-vat-ban-nha-dat/{id}', 'Web\PostController@editSell')
         ->defaults('_config', ['view' => 'default.pages.posts.edit_sell'])
-        ->name('edit_sell');
-    Route::post('quan-ly-tin-rao-vat-ban-nha-dat/{id}', 'Web\PostController@updateSell')
-        ->defaults('_config', ['view' => 'default.pages.posts.update_sell'])
-        ->name('update_sell');    
+        ->name('edit_sell');    
     Route::get('quan-ly-tin-rao-vat-ban-nha-dat-delete/{id}', 'Web\PostController@deleteSell')->name('delete_sell');
     Route::get('dang-tin-rao-vat-mua-nha-dat', 'Web\PostController@createBuy')
         ->defaults('_config', ['view' => 'default.pages.posts.create_buy'])
