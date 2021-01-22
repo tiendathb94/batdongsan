@@ -25,6 +25,9 @@ class SearchPrice extends Component {
             isShow: false,
             fromPrice: '',
             toPrice: '',
+            style: {
+                "color": "black!important"
+            }
         }
         this.wrapperRef = React.createRef()
         this.titleRef = this.props.titlePrice
@@ -102,10 +105,10 @@ class SearchPrice extends Component {
                 {
                     this.state.isShow && (
                         <div className="bg-white">
-                            <div className="d-flex justify-content-center p-2 border" style="color:black!important">
-                                <input type="number" onKeyUp={this.changePrice} className="text-center form-control" name="fromPrice"/>
+                            <div className="d-flex justify-content-center p-2 border">
+                                <input type="number" onKeyUp={this.changePrice} className="text-center form-control" name="fromPrice" style={{color: "black!important"}}/>
                                 <span className="mx-2"> - </span>
-                                <input type="number" onKeyUp={this.changePrice} className="text-center form-control" name="toPrice"/>
+                                <input type="number" onKeyUp={this.changePrice} className="text-center form-control" name="toPrice" style={{color: "black!important"}}/>
                             </div>
                             <ul className="border">
                                 {

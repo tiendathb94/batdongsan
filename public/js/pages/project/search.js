@@ -49823,7 +49823,10 @@ var SearchPrice = /*#__PURE__*/function (_Component) {
     _this.state = {
       isShow: false,
       fromPrice: '',
-      toPrice: ''
+      toPrice: '',
+      style: {
+        "color": "black!important"
+      }
     };
     _this.wrapperRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
     _this.titleRef = _this.props.titlePrice;
@@ -49861,20 +49864,25 @@ var SearchPrice = /*#__PURE__*/function (_Component) {
       }, "M\u1EE9c gi\xE1")), this.state.isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "d-flex justify-content-center p-2 border",
-        style: "color:black!important"
+        className: "d-flex justify-content-center p-2 border"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "number",
         onKeyUp: this.changePrice,
         className: "text-center form-control",
-        name: "fromPrice"
+        name: "fromPrice",
+        style: {
+          color: "black!important"
+        }
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         className: "mx-2"
       }, " - "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         type: "number",
         onKeyUp: this.changePrice,
         className: "text-center form-control",
-        name: "toPrice"
+        name: "toPrice",
+        style: {
+          color: "black!important"
+        }
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "border"
       }, this.listPrice.map(function (item) {
