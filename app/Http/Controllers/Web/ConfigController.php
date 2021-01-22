@@ -48,7 +48,7 @@ class ConfigController extends Controller
             $uploadedFilePath = $request->file('image')->storePublicly('/public/uploads/images/banner');
             try {
                 $image = str_replace('public', '', $uploadedFilePath);
-                $image = str_replace('.gif', '.jpeg', $uploadedFilePath);
+                $image = str_replace('.gif', '.jpeg', $image);
                 $banner = ConfigBanner::create([
                     "image"     => $image,
                     "name"      => $name,
