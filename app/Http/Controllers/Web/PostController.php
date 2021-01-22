@@ -22,11 +22,11 @@ class PostController extends Controller
     public function postList($slug){
         $category = Category::query()->where('destination_entity', Post::class)->whereSlug($slug)->first();
         if(is_null($category->parent_id) OR $category->parent_id == 0){
-            $posts = Post::query()->where('form',$category->id)->get();
+            $posts = Post::query()->where('form',$category->id);
         }else{
-            $posts = Post::query()->where('category_id',$category->id)->get();
+            $posts = Post::query()->where('category_id',$category->id);
         }
-        return view('default.pages.posts.listing_post',["category" => $category, "posts" => $posts]);
+        return view('default.pages.posts.listing_post',["category" => $category, "posts" => $posts->paginate()]);
     }
     public function postDetail($categorySlug, $postSlug){    
         $category = Category::whereSlug($categorySlug)->first();

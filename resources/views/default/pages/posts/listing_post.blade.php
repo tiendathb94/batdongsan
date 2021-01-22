@@ -77,7 +77,9 @@
     @endforeach
     @if(count($posts) == 0)
         <h1>Hiện tại danh mục này chưa có bài đăng nào !</h1>
-    @endif 
+    @else
+    {{ $posts->links() }}
+    @endif
     </div>
 </div>
 

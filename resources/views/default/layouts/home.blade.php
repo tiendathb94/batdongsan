@@ -39,12 +39,11 @@
         <div class="loveMoney102">
             <div class="swiper-container swiper-container-slider">
                <div class="swiper-wrapper">
+                  @foreach($banners as $banner)
                   <div class="swiper-slide">
-                    <img src="/images/banner/1.jpg" />
+                    <img src="{{\Storage::url($banner->image)}}" alt="{{$banner->name}}"/>
                   </div>
-                  <div class="swiper-slide">
-                    <img src="/images/banner/2.jpg" />
-                  </div>
+                  @endforeach
                </div>
                <div class="swiper-pagination"></div>
                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>

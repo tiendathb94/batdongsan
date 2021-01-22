@@ -24,6 +24,15 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `addresses`
 --
+CREATE TABLE `config_banner` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `active` tinyint(4) DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `addresses` (
   `id` bigint(20) UNSIGNED NOT NULL,

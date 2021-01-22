@@ -30,10 +30,11 @@ class HomeController extends Controller
         $listBuy            = $this->list_buy();
         $listSell           = $this->list_sell();
         $config             = DB::table("config")->first();
+        $banners            = DB::table("config_banner")->orderBy("id")->take(6)->get();
         if ($agent->isDesktop()) {
-            return view('default.layouts.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listBuy','listSell','config'));
+            return view('default.layouts.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listBuy','listSell','config','banners'));
         }else{
-            return view('default.mobile.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listSell','listBuy','config'));
+            return view('default.mobile.home', compact('tuvanluat','hotnews','projectfeatures','newsTabs','listReals','listSell','listBuy','config','banners'));
         }
     }
 

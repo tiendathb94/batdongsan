@@ -124,6 +124,10 @@ function personalMenuItemsDefinition()
                 [
                     'route_name' => 'config.footer',
                     'label' => 'Cập nhật thông tin footer',
+                ],
+                [
+                    'route_name' => 'config.banner',
+                    'label' => 'Danh sách banner',
                 ]
             ],
         ]
