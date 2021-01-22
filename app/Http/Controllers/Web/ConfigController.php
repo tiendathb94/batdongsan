@@ -46,12 +46,17 @@ class ConfigController extends Controller
         $name   = $request->name;
         if($request->has('image')){
             $uploadedFilePath = $request->file('image')->storePublicly('/public/uploads/images/banner');
-            $banner = ConfigBanner::create([
-                "image"     => str_replace('public', '', $uploadedFilePath),
-                "name"      => $name,
-                "active"    => 1
-            ]);
-            return redirect()->route('config.banner');
+            try {
+                $banner = ConfigBanner::create([
+                    "image"     => str_replace('public', '', $uploadedFilePath),
+                    "name"      => $name,
+                    "active"    => 1
+                ]);
+                return redirect()->route('config.banner');
+            } catch (\Throwable $th) {
+                \Log::info($th->getMessage());
+                return back()->with('error', 'Thao tác thất bại!');
+            }
         }
     }
     public function deleteBanner($id){
