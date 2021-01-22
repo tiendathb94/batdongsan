@@ -154,7 +154,7 @@ class FormSearch extends Component {
                         </div>
                     </div>
                     {
-                        this.state.isMoreSearch && (
+                        this.state.isMoreSearch ? (
                             <div className="row">
                                 <div className="col-12 col-md-6 col-lg-3 mt-3">
                                     <select ref={this.categoryProjectRef} onChange={this.onChangeSelect} name="categoryId" id="" className="form-control">
@@ -183,7 +183,7 @@ class FormSearch extends Component {
                                     <SearchPrice titlePrice={this.titlePrice} setPrice={this.setPrice} />
                                 </div>
                             </div>
-                        )
+                        ) : ""
                     }
                     
                     <div className="row mt-3">

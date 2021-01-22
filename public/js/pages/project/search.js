@@ -50382,7 +50382,7 @@ var FormSearch = /*#__PURE__*/function (_Component) {
         onChange: this.onChangeProject,
         inputSearchRef: this.inputSearchRef,
         placeholderInput: "Nh\u1EADp t\u1EEB kh\xF3a t\xECm ki\u1EBFm theo t\xEAn d\u1EF1 \xE1n"
-      }))), this.state.isMoreSearch && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))), this.state.isMoreSearch ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 col-md-6 col-lg-3 mt-3"
@@ -50427,7 +50427,7 @@ var FormSearch = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SearchPrice__WEBPACK_IMPORTED_MODULE_5__["default"], {
         titlePrice: this.titlePrice,
         setPrice: this.setPrice
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))) : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col font-italic"

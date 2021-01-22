@@ -180,7 +180,7 @@ class FormSearchHome extends Component {
                     </div>
                     <div className="col-12 timcode">
                         {
-                            this.state.isMoreSearch && (
+                            this.state.isMoreSearch ? (
                                 <div className="row">
                                     <div className="col-12 col-md-6 col-lg-4 mt-4 search-filter advance-select-box">
                                         <Search onChange={this.onChangeProvince}
@@ -202,8 +202,8 @@ class FormSearchHome extends Component {
                                         <SearchPrice titlePrice={this.titlePrice} setPrice={this.setPrice} />
                                     </div>
                                 </div>
-                            )
-                        }
+                            ) : ""
+                        } 
                         
                         <div className="row mt-3">
                             <div className="col font-italic">

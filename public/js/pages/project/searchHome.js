@@ -50427,7 +50427,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         className: "clear"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 timcode"
-      }, this.state.isMoreSearch && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.state.isMoreSearch ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 col-md-6 col-lg-4 mt-4 search-filter advance-select-box"
@@ -50457,7 +50457,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SearchPrice__WEBPACK_IMPORTED_MODULE_5__["default"], {
         titlePrice: this.titlePrice,
         setPrice: this.setPrice
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))) : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col font-italic"
