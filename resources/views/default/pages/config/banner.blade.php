@@ -40,7 +40,7 @@
             @foreach($banners as $banner)
                 <tr>
                     <td class=" d-md-table-cell">{{$banner->id}}</td>
-                    <td class=" d-md-table-cell">{{$banner->name}}</td>>
+                    <td class=" d-md-table-cell">{{$banner->name}}</td>
                     <td class=" d-md-table-cell"  valign="middle" align="center">
                         <img src="{{\Storage::url($banner->image)}}" alt="{{$banner->name}}" style="height:30%">
                     </td>
