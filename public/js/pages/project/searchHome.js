@@ -49629,6 +49629,62 @@ Search.propTypes = {
 
 /***/ }),
 
+/***/ "./resources/js/components/SearchAddress.jsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/SearchAddress.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+var SearchAddress = function SearchAddress(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.street),
+      _useState2 = _slicedToArray(_useState, 2),
+      street = _useState2[0],
+      setStreet = _useState2[1];
+
+  var wrapperRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  var _onChange = function onChange(e, props) {
+    props.setStreet(e.target.value);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "position-relative search-component",
+    ref: wrapperRef
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "ti-search"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    onChange: function onChange(e) {
+      return _onChange(e, props);
+    },
+    type: "text",
+    defaultValue: street,
+    className: "form-control"
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchAddress);
+
+/***/ }),
+
 /***/ "./resources/js/components/SearchPrice.jsx":
 /*!*************************************************!*\
   !*** ./resources/js/components/SearchPrice.jsx ***!
@@ -50082,6 +50138,114 @@ SearchProject.propTypes = {
 
 /***/ }),
 
+/***/ "./resources/js/components/SearchTotalArea.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/SearchTotalArea.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+var SearchTotalArea = function SearchTotalArea(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.totalArea),
+      _useState2 = _slicedToArray(_useState, 2),
+      totalArea = _useState2[0],
+      setTotalArea = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isShow = _useState4[0],
+      setIsShow = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    color: "black!important"
+  }),
+      _useState6 = _slicedToArray(_useState5, 2),
+      style = _useState6[0],
+      setStyle = _useState6[1];
+
+  var wrapperRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    document.addEventListener('click', handleClick);
+  });
+
+  var handleClick = function handleClick(event) {
+    var target = event.target;
+
+    if (!wrapperRef.current.contains(target)) {
+      setIsShow(false);
+    }
+  };
+
+  var _onChange = function onChange(e, props) {
+    setTotalArea(_objectSpread(_objectSpread({}, totalArea), {}, _defineProperty({}, e.target.name, e.target.value)));
+    props.setTotalArea(_objectSpread(_objectSpread({}, totalArea), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "position-relative search-component",
+    ref: wrapperRef
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "position-relative search-price-component",
+    onClick: function onClick() {
+      return setIsShow(true);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "ti-search"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, totalArea.fromTotalArea || totalArea.toTotalArea ? totalArea.fromTotalArea + "-" + totalArea.toTotalArea + " m2" : "Diện tích")), isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bg-white"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "d-flex justify-content-center p-2 border"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "number",
+    className: "text-center form-control",
+    onChange: function onChange(e) {
+      return _onChange(e, props);
+    },
+    name: "fromTotalArea",
+    style: style,
+    value: totalArea.fromTotalArea
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "mx-2"
+  }, " - "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "number",
+    className: "text-center form-control",
+    onChange: function onChange(e) {
+      return _onChange(e, props);
+    },
+    name: "toTotalArea",
+    style: style,
+    value: totalArea.toTotalArea
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SearchTotalArea);
+
+/***/ }),
+
 /***/ "./resources/js/config.js":
 /*!********************************!*\
   !*** ./resources/js/config.js ***!
@@ -50119,6 +50283,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Search */ "./resources/js/components/Search.jsx");
 /* harmony import */ var _components_SearchPrice__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/SearchPrice */ "./resources/js/components/SearchPrice.jsx");
 /* harmony import */ var _components_SearchProject__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/SearchProject */ "./resources/js/components/SearchProject.jsx");
+/* harmony import */ var _components_SearchTotalArea__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../components/SearchTotalArea */ "./resources/js/components/SearchTotalArea.jsx");
+/* harmony import */ var _components_SearchAddress__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../components/SearchAddress */ "./resources/js/components/SearchAddress.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 
@@ -50148,6 +50314,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -50222,18 +50390,48 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
       }, _callee2);
     })));
 
-    _defineProperty(_assertThisInitialized(_this), "getDistricts", /*#__PURE__*/function () {
-      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(provinceId, districtId) {
+    _defineProperty(_assertThisInitialized(_this), "getWards", /*#__PURE__*/function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(districtId) {
         var response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__["default"].api.baseUrl, "/address/districts-by-province?province_id=").concat(provinceId));
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__["default"].api.baseUrl, "/address/wards-by-district?district_id=").concat(districtId));
 
               case 2:
                 response = _context3.sent;
+
+                _this.setState({
+                  wards: response.data
+                });
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function (_x) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
+
+    _defineProperty(_assertThisInitialized(_this), "getDistricts", /*#__PURE__*/function () {
+      var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(provinceId, districtId) {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__["default"].api.baseUrl, "/address/districts-by-province?province_id=").concat(provinceId));
+
+              case 2:
+                response = _context4.sent;
 
                 _this.setState({
                   districts: response.data
@@ -50245,14 +50443,14 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
 
               case 5:
               case "end":
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3);
+        }, _callee4);
       }));
 
-      return function (_x, _x2) {
-        return _ref3.apply(this, arguments);
+      return function (_x2, _x3) {
+        return _ref4.apply(this, arguments);
       };
     }());
 
@@ -50263,13 +50461,25 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
       });
     });
 
+    _defineProperty(_assertThisInitialized(_this), "setTotalArea", function (value) {
+      _this.setState({
+        fromTotalArea: value.fromTotalArea,
+        toTotalArea: value.toTotalArea
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "setStreet", function (value) {
+      _this.setState({
+        street: value
+      });
+    });
+
     _defineProperty(_assertThisInitialized(_this), "onChangeProvince", function (value, id) {
       _this.setState({
         provinceName: value,
         provinceId: id
-      });
+      }); // this.inputSearchRef.current.value = ''
 
-      _this.inputSearchRef.current.value = '';
 
       if (id) {
         _this.getDistricts(id);
@@ -50286,9 +50496,12 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "onChangeSelect", function (e) {
-      _this.inputSearchRef.current.value = '';
-
+      // this.inputSearchRef.current.value = ''
       _this.setState(_defineProperty({}, e.target.name, e.target.value));
+
+      if (e.target.name == 'districtId') {
+        _this.getWards(e.target.value);
+      }
     });
 
     _defineProperty(_assertThisInitialized(_this), "onChangeProject", function (project) {
@@ -50305,18 +50518,16 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         });
 
         _this.inputSearchProvinceRef.current.value = project.address.province.name;
-      } else {
-        _this.setState({
-          project: {},
-          provinceId: '',
-          provinceName: '',
-          districtId: '',
-          districts: []
-        });
-
-        _this.inputSearchProvinceRef.current.value = '';
-        _this.categoryProjectRef.current.value = '';
-        _this.titlePrice.current.textContent = 'Mức giá';
+      } else {// this.setState({
+        //     project: {},
+        //     provinceId: '',
+        //     provinceName: '',
+        //     districtId: '',
+        //     districts: []
+        // })
+        // this.inputSearchProvinceRef.current.value = ''
+        // this.categoryProjectRef.current.value = ''
+        // this.titlePrice.current.textContent = 'Mức giá'
       }
     });
 
@@ -50328,9 +50539,11 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
           projectCategories = _this$state.projectCategories,
           categoryId = _this$state.categoryId,
           priceFrom = _this$state.priceFrom,
-          priceTo = _this$state.priceTo;
+          priceTo = _this$state.priceTo,
+          fromTotalArea = _this$state.fromTotalArea,
+          toTotalArea = _this$state.toTotalArea;
       var keyword = _this.inputSearchRef.current.value;
-      console.log(project.category);
+      var query = "keyword=".concat(keyword, "&province_id=").concat(provinceId, "&district_id=").concat(districtId, "&priceFrom=").concat(priceFrom, "&priceTo=").concat(priceTo, "&fromTotalArea=").concat(fromTotalArea, "&toTotalArea=").concat(toTotalArea);
 
       if (project && project.slug) {
         window.location = "/du-an/".concat(project.category.slug, "/").concat(project.slug);
@@ -50338,9 +50551,9 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         var category = projectCategories.filter(function (category) {
           return category.id == categoryId;
         })[0];
-        window.location = "/du-an/".concat(category.slug, "?keyword=").concat(keyword, "&province_id=").concat(provinceId, "&district_id=").concat(districtId, "&priceFrom=").concat(priceFrom, "&priceTo=").concat(priceTo);
+        window.location = "/du-an/".concat(category.slug, "?").concat(query);
       } else if (keyword) {
-        window.location = "/tim-kiem-du-an?keyword=".concat(keyword);
+        window.location = "/tim-kiem-du-an?".concat(query);
       }
     });
 
@@ -50354,7 +50567,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
     });
 
     _this.state = {
-      isMoreSearch: true,
+      isMoreSearch: false,
       keyword: '',
       projectCategories: [],
       categoryId: '',
@@ -50366,7 +50579,33 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
       priceFrom: '',
       priceTo: '',
       project: '',
-      category_project_name: ''
+      category_project_name: '',
+      fromTotalArea: '',
+      toTotalArea: '',
+      wards: [],
+      wardId: '',
+      totalRoom: '',
+      field_room: [{
+        'id': 1,
+        'name': '1+'
+      }, {
+        'id': 2,
+        'name': '2+'
+      }, {
+        'id': 3,
+        'name': '3+'
+      }, {
+        'id': 4,
+        'name': '4+'
+      }, {
+        'id': 5,
+        'name': '5+'
+      }, {
+        'id': 9,
+        'name': 'Không xác định'
+      }],
+      street: 'Đường phố',
+      direction: []
     };
     _this.inputSearchRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
     _this.categoryProjectRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
@@ -50381,7 +50620,41 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
     value: function componentDidMount() {
       this.getProjectCategories();
       this.getProvinces();
+      this.getDirection();
     }
+  }, {
+    key: "getDirection",
+    value: function () {
+      var _getDirection = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        var response;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("".concat(_config__WEBPACK_IMPORTED_MODULE_3__["default"].api.baseUrl, "/posts/direction"));
+
+              case 2:
+                response = _context5.sent;
+                console.log(response.data);
+                this.setState({
+                  direction: response.data
+                });
+
+              case 5:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function getDirection() {
+        return _getDirection.apply(this, arguments);
+      }
+
+      return getDirection;
+    }()
   }, {
     key: "render",
     value: function render() {
@@ -50435,10 +50708,10 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         className: "clear"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 timcode"
-      }, this.state.isMoreSearch ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-12 col-md-6 col-lg-4 mt-4 search-filter advance-select-box"
+        className: "col-12 col-md-6 col-lg-3 mt-3 search-filter advance-select-box"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Search__WEBPACK_IMPORTED_MODULE_4__["default"], {
         onChange: this.onChangeProvince,
         inputSearchProvinceRef: this.inputSearchProvinceRef,
@@ -50446,7 +50719,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         placeholderInput: "T\u1EC9nh th\xE0nh",
         list: this.state.provinces
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-12 col-md-6 col-lg-4 mt-4"
+        className: "col-12 col-md-6 col-lg-3 mt-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
         ref: this.districtRef,
         onChange: this.onChangeSelect,
@@ -50461,11 +50734,67 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
           value: district.id
         }, district.name);
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-12 col-md-6 col-lg-4 mt-4"
+        className: "col-12 col-md-6 col-lg-3 mt-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SearchPrice__WEBPACK_IMPORTED_MODULE_5__["default"], {
         titlePrice: this.titlePrice,
         setPrice: this.setPrice
-      }))) : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-lg-3 mt-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SearchTotalArea__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        setTotalArea: this.setTotalArea,
+        totalArea: {
+          fromTotalArea: this.state.fromTotalArea,
+          toTotalArea: this.state.toTotalArea
+        }
+      }))), this.state.isMoreSearch ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-lg-3 mt-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
+        ref: this.warRef,
+        onChange: this.onChangeSelect,
+        name: "wardId",
+        id: "",
+        className: "form-control"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+        value: ""
+      }, "Ph\u01B0\u1EDDng x\xE3"), this.state.wards.map(function (ward) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+          key: ward.id,
+          value: ward.id
+        }, ward.name);
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-lg-3 mt-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SearchAddress__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        street: this.state.street,
+        setStreet: this.setStreet
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-lg-3 mt-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
+        onChange: this.onChangeSelect,
+        name: "totalRoom",
+        className: "form-control"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+        value: "0"
+      }, "S\u1ED1 ph\xF2ng"), this.state.field_room.map(function (item) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+          key: item.id,
+          value: item.id
+        }, item.name);
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-lg-3 mt-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
+        onChange: this.onChangeSelect,
+        name: "totalRoom",
+        className: "form-control"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+        value: "0"
+      }, "H\u01B0\u1EDBng nh\xE0"), this.state.direction.map(function (item, index) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+          key: index,
+          value: index
+        }, item);
+      })))) : "", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col font-italic"
