@@ -50541,9 +50541,13 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
           priceFrom = _this$state.priceFrom,
           priceTo = _this$state.priceTo,
           fromTotalArea = _this$state.fromTotalArea,
-          toTotalArea = _this$state.toTotalArea;
+          toTotalArea = _this$state.toTotalArea,
+          wardId = _this$state.wardId,
+          street = _this$state.street,
+          totalRoom = _this$state.totalRoom,
+          direction_house = _this$state.direction_house;
       var keyword = _this.inputSearchRef.current.value;
-      var query = "keyword=".concat(keyword, "&province_id=").concat(provinceId, "&district_id=").concat(districtId, "&priceFrom=").concat(priceFrom, "&priceTo=").concat(priceTo, "&fromTotalArea=").concat(fromTotalArea, "&toTotalArea=").concat(toTotalArea);
+      var query = "keyword=".concat(keyword, "&province_id=").concat(provinceId, "&district_id=").concat(districtId, "&priceFrom=").concat(priceFrom, "&priceTo=").concat(priceTo, "&fromTotalArea=").concat(fromTotalArea, "&toTotalArea=").concat(toTotalArea, "&wardId=").concat(wardId, "&street=").concat(street, "&totalRoom=").concat(totalRoom, "&direction_house=").concat(direction_house);
 
       if (project && project.slug) {
         window.location = "/du-an/".concat(project.category.slug, "/").concat(project.slug);
@@ -50605,7 +50609,8 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         'name': 'Không xác định'
       }],
       street: 'Đường phố',
-      direction: []
+      direction: [],
+      direction_house: ''
     };
     _this.inputSearchRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
     _this.categoryProjectRef = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createRef();
@@ -50785,7 +50790,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         className: "col-12 col-md-6 col-lg-3 mt-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
         onChange: this.onChangeSelect,
-        name: "totalRoom",
+        name: "direction_house",
         className: "form-control"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
         value: "0"

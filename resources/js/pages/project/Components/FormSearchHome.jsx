@@ -40,7 +40,8 @@ class FormSearchHome extends Component {
 
             ],
             street: 'Đường phố',
-            direction: []
+            direction: [],
+            direction_house: ''
         }
         this.inputSearchRef = React.createRef()
         this.categoryProjectRef = React.createRef()
@@ -168,9 +169,9 @@ class FormSearchHome extends Component {
     }
 
     searchProject = () => {
-        const { project, provinceId, districtId, projectCategories, categoryId, priceFrom, priceTo,fromTotalArea, toTotalArea } = this.state
+        const { project, provinceId, districtId, projectCategories, categoryId, priceFrom, priceTo,fromTotalArea, toTotalArea,wardId,street,totalRoom, direction_house} = this.state
         const keyword = this.inputSearchRef.current.value
-        const query = `keyword=${keyword}&province_id=${provinceId}&district_id=${districtId}&priceFrom=${priceFrom}&priceTo=${priceTo}&fromTotalArea=${fromTotalArea}&toTotalArea=${toTotalArea}`;
+        const query = `keyword=${keyword}&province_id=${provinceId}&district_id=${districtId}&priceFrom=${priceFrom}&priceTo=${priceTo}&fromTotalArea=${fromTotalArea}&toTotalArea=${toTotalArea}&wardId=${wardId}&street=${street}&totalRoom=${totalRoom}&direction_house=${direction_house}`;
 
         if(project && project.slug) {
             window.location = `/du-an/${project.category.slug}/${project.slug}`
@@ -266,7 +267,7 @@ class FormSearchHome extends Component {
                                 </select>
                             </div>
                             <div className="col-12 col-md-6 col-lg-3 mt-3"> 
-                                <select onChange={this.onChangeSelect} name="totalRoom" className="form-control">
+                                <select onChange={this.onChangeSelect} name="direction_house" className="form-control">
                                     <option value="0">Hướng nhà</option>
                                     {
                                         this.state.direction.map((item,index) => (<option key={index} value={index}>{item}</option>))
