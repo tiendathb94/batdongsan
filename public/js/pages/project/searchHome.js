@@ -50641,12 +50641,11 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
 
               case 2:
                 response = _context5.sent;
-                console.log(response.data);
                 this.setState({
                   direction: response.data
                 });
 
-              case 5:
+              case 4:
               case "end":
                 return _context5.stop();
             }

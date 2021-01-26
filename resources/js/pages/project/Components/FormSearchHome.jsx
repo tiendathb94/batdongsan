@@ -90,7 +90,6 @@ class FormSearchHome extends Component {
     }
     async getDirection () {
         const response = await axios.get(`${config.api.baseUrl}/posts/direction`)
-        console.log(response.data)
         this.setState({ direction: response.data })
     }
 
