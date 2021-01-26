@@ -1,6 +1,7 @@
 <?php
 
 use App\Entities\Category;
+use App\Entities\News;
 use App\Entities\Post;
 use App\Entities\Project;
 
@@ -118,136 +119,99 @@ function navbarMenuItemsDefinition()
             'label' => 'Tin tức',
             'route_name' => 'news.index',
             'parameter' => '',
-            'items' => [
-                [
-                    'label' => 'BĐS & Covid-19',
-                    'route_name' => 'category.show',
-                    'parameter' => 'bds-covid-19',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Tin thị trường',
-                    'parameter' => 'tin-thi-truong',
-                    'route_name' => 'category.show',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Interaktive Story',
-                    'parameter' => 'interaktivestory',
-                    'route_name' => 'category.show',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Phân tích - Nhận định',
-                    'parameter' => 'phan-tich-nhan-dinh',
-                    'route_name' => 'category.show',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Chính sách - Quản lý',
-                    'parameter' => 'chinh-sach-quan-ly',
-                    'route_name' => 'category.show',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Thông tin quy hoạch',
-                    'parameter' => 'thong-tin-quy-hoach',
-                    'route_name' => 'category.show',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Bất động sản thế giới',
-                    'parameter' => 'bds-the-gioi',
-                    'route_name' => 'category.show',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Tài chính - Chứng khoán - BĐS',
-                    'parameter' => 'tai-chinh-chung-khoan-bds',
-                    'route_name' => 'category.show',
-                    'items' => []
-                ],
-                [
-                    'label' => 'Tư vấn luật',
-                    'parameter' => 'tu-van-luat',
-                    'route_name' => 'category.show',
-                    'items' => [
-                        [
-                            'label' => 'Trình tự, thủ tục',
-                            'parameter' => 'trinh-tu-thu-tuc',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Quyền sở hữu',
-                            'parameter' => 'quyen-so-huu',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Tranh chấp',
-                            'parameter' => 'tranh-chap',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Xây dựng - Hoàn công',
-                            'parameter' => 'xay-dung-hoan-cong',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Nghĩa vụ tài chính',
-                            'parameter' => 'nghia-vu-tai-chinh',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Các vấn đề có yếu tố nước ngoài',
-                            'parameter' => 'cac-van-de-co-yeu-to-nuoc-ngoai',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                    ]
-                ],
-                [
-                    'label' => 'Lời khuyên',
-                    'parameter' => 'loi-khuyen',
-                    'route_name' => 'category.show',
-                    'items' => [
-                        [
-                            'label' => 'Lời khuyên cho người mua',
-                            'parameter' => 'loi-khuyen-cho-nguoi-mua',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Lời khuyên cho người bán',
-                            'parameter' => 'loi-khuyen-cho-nguoi-ban',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Lời khuyên cho nhà đầu tư',
-                            'parameter' => 'loi-khuyen-cho-nha-dau-tu',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Lời khuyên cho người thuê',
-                            'parameter' => 'loi-khuyen-cho-nguoi-thue',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                        [
-                            'label' => 'Lời khuyên cho người cho thuê',
-                            'parameter' => 'loi-khuyen-cho-nguoi-cho-thue',
-                            'route_name' => 'category.show',
-                            'items' => []
-                        ],
-                    ]
-                ],
-            ],
+            'items' => (function () {
+                $items = [];
+                $categories = Category::query()->where('destination_entity', News::class)->get();
+                foreach ($categories as $category) {
+                    $items[] = [
+                        'label' => $category->name,
+                        'route_name' => 'category.show',
+                        'parameter' => $category->slug,
+                        'items' => [],
+                    ];
+                }
+
+                return $items;
+            })(),
+                // [
+                //     'label' => 'Tư vấn luật',
+                //     'parameter' => 'tu-van-luat',
+                //     'route_name' => 'category.show',
+                //     'items' => [
+                //         [
+                //             'label' => 'Trình tự, thủ tục',
+                //             'parameter' => 'trinh-tu-thu-tuc',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Quyền sở hữu',
+                //             'parameter' => 'quyen-so-huu',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Tranh chấp',
+                //             'parameter' => 'tranh-chap',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Xây dựng - Hoàn công',
+                //             'parameter' => 'xay-dung-hoan-cong',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Nghĩa vụ tài chính',
+                //             'parameter' => 'nghia-vu-tai-chinh',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Các vấn đề có yếu tố nước ngoài',
+                //             'parameter' => 'cac-van-de-co-yeu-to-nuoc-ngoai',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //     ]
+                // ],
+                // [
+                //     'label' => 'Lời khuyên',
+                //     'parameter' => 'loi-khuyen',
+                //     'route_name' => 'category.show',
+                //     'items' => [
+                //         [
+                //             'label' => 'Lời khuyên cho người mua',
+                //             'parameter' => 'loi-khuyen-cho-nguoi-mua',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Lời khuyên cho người bán',
+                //             'parameter' => 'loi-khuyen-cho-nguoi-ban',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Lời khuyên cho nhà đầu tư',
+                //             'parameter' => 'loi-khuyen-cho-nha-dau-tu',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Lời khuyên cho người thuê',
+                //             'parameter' => 'loi-khuyen-cho-nguoi-thue',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //         [
+                //             'label' => 'Lời khuyên cho người cho thuê',
+                //             'parameter' => 'loi-khuyen-cho-nguoi-cho-thue',
+                //             'route_name' => 'category.show',
+                //             'items' => []
+                //         ],
+                //     ]
         ],
 
         [
