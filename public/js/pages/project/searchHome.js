@@ -49655,14 +49655,35 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var SearchAddress = function SearchAddress(props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.street),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
-      street = _useState2[0],
-      setStreet = _useState2[1];
+      isShow = _useState2[0],
+      setIsShow = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.street),
+      _useState4 = _slicedToArray(_useState3, 2),
+      street = _useState4[0],
+      setStreet = _useState4[1];
 
   var wrapperRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    document.addEventListener('click', handleClick);
+  });
+
+  var handleClick = function handleClick(event) {
+    var target = event.target;
+
+    if (!wrapperRef.current.contains(target)) {
+      setIsShow(false);
+    }
+  };
+
+  var onFocusInput = function onFocusInput() {
+    setIsShow(true);
+  };
 
   var _onChange = function onChange(e, props) {
+    setStreet(e.target.value);
     props.setStreet(e.target.value);
   };
 
@@ -49675,10 +49696,14 @@ var SearchAddress = function SearchAddress(props) {
     onChange: function onChange(e) {
       return _onChange(e, props);
     },
+    onFocus: onFocusInput,
     type: "text",
-    defaultValue: street,
-    className: "form-control"
-  }));
+    className: "form-control",
+    placeholder: "\u0110\u01B0\u1EDDng ph\u1ED1",
+    defaultValue: street
+  }), isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "border"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\u0110\u01B0\u1EDDng ph\u1ED1")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchAddress);
@@ -50546,6 +50571,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
           street = _this$state.street,
           totalRoom = _this$state.totalRoom,
           direction_house = _this$state.direction_house;
+      console.log(provinceId);
       var keyword = _this.inputSearchRef.current.value;
       var query = "keyword=".concat(keyword, "&province_id=").concat(provinceId, "&district_id=").concat(districtId, "&priceFrom=").concat(priceFrom, "&priceTo=").concat(priceTo, "&fromTotalArea=").concat(fromTotalArea, "&toTotalArea=").concat(toTotalArea, "&wardId=").concat(wardId, "&street=").concat(street, "&totalRoom=").concat(totalRoom, "&direction_house=").concat(direction_house);
 
@@ -50556,9 +50582,9 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
           return category.id == categoryId;
         })[0];
         window.location = "/du-an/".concat(category.slug, "?").concat(query);
-      } else if (keyword) {
-        window.location = "/tim-kiem-du-an?".concat(query);
       }
+
+      window.location = "/tim-kiem-du-an?".concat(query);
     });
 
     _defineProperty(_assertThisInitialized(_this), "changeProjectName", function (category) {
@@ -50608,7 +50634,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         'id': 9,
         'name': 'Không xác định'
       }],
-      street: 'Đường phố',
+      street: '',
       direction: [],
       direction_house: ''
     };

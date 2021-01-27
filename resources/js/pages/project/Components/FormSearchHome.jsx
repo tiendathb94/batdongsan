@@ -39,7 +39,7 @@ class FormSearchHome extends Component {
                 {'id': 9,'name': 'Không xác định'},
 
             ],
-            street: 'Đường phố',
+            street: '',
             direction: [],
             direction_house: ''
         }
@@ -169,6 +169,7 @@ class FormSearchHome extends Component {
 
     searchProject = () => {
         const { project, provinceId, districtId, projectCategories, categoryId, priceFrom, priceTo,fromTotalArea, toTotalArea,wardId,street,totalRoom, direction_house} = this.state
+        console.log(provinceId);
         const keyword = this.inputSearchRef.current.value
         const query = `keyword=${keyword}&province_id=${provinceId}&district_id=${districtId}&priceFrom=${priceFrom}&priceTo=${priceTo}&fromTotalArea=${fromTotalArea}&toTotalArea=${toTotalArea}&wardId=${wardId}&street=${street}&totalRoom=${totalRoom}&direction_house=${direction_house}`;
 
@@ -177,9 +178,8 @@ class FormSearchHome extends Component {
         } else if (categoryId) {
             const category = projectCategories.filter(category => category.id == categoryId)[0]
             window.location = `/du-an/${category.slug}?${query}`
-        } else if (keyword) {
-            window.location = `/tim-kiem-du-an?${query}`
-        }
+        } 
+        window.location = `/tim-kiem-du-an?${query}`
     }
     changeProjectName = (category) => {
         this.setState({categoryId: category.id, category_project_name: category.name})

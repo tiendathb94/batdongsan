@@ -227,9 +227,47 @@ class ProjectController extends Controller
 
     public function search(Request $request)
     {
-        $projects = Project::whereStatus(Project::StatusApproved)->where('long_name', 'like', "%$request->keyword%")->paginate(config('app.project.search'));
+        $fromTotalArea = (int) $request->fromTotalArea;
+        $toTotalArea   = (int) $request->toTotalArea;
+        $keyword       = $request->keyword;
+        $projects = Project::query()
+            ->where('status', '=', Project::StatusApproved)
+            ->where(function($item) use($keyword){
+                if($keyword){
+                    $item->where('long_name', 'like', "%$keyword%");
+                }
+            })
+            ->whereHas('address', function ($query) use($request) {
+                if($request->province_id) {
+                    $query->where('province_id', $request->province_id);
+                }
+                if($request->district_id) {
+                    $query->where('district_id', $request->district_id);
+                }
+            });
+            if($request->priceFrom) {
+                if ($request->priceFrom >= 1000) {
+                    $projects->where('price', '>=', $request->priceFrom / 1000)->where('price_unit', Project::PriceUnitBillion);
+                } else {
+                    $projects->where('price', '>=', $request->priceFrom)->where('price_unit', Project::PriceUnitMillion);
+                }
+            }
+            if($request->priceTo) {
+                if ($request->priceTo >= 1000) {
+                    $projects->where('price', '<=', $request->pricpriceToeFrom / 1000)->where('price_unit', Project::PriceUnitBillion);
+                } else {
+                    $projects->where('price', '<=', $request->priceTo)->where('price_unit', Project::PriceUnitMillion);
+                }
+            }
+            if($fromTotalArea){
+                $projects->where('total_area','>=',$fromTotalArea);
+            }
+            if($toTotalArea){
+                $projects->where('total_area','<=',$toTotalArea);
+            }
+
         $data = [
-            'projects' => $projects
+            'projects' => $projects->paginate(15)
         ];
         return view($this->_config['view'], $data);
     }
