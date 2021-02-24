@@ -552,7 +552,7 @@
             </div>
          </div>
       </div>
-      @if($projectfeatures->count() > 0)
+      @if(count($projectfeatures) > 0)
       <div class="home-project">
          <h2 class="fl">{{trans('lang.outstanding_project')}}</h2>
          <div class="home-more-link">
