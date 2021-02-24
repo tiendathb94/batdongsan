@@ -24,7 +24,7 @@ const SearchTotalArea = (props) => {
     return (
         <div className="position-relative search-component" ref={wrapperRef}>
             <div className="position-relative search-price-component" onClick={() => setIsShow(true)}   >
-                <i className="ti-search"></i>
+                {/* <i className="ti-search"></i> */}
                 <span>{totalArea.fromTotalArea || totalArea.toTotalArea ? totalArea.fromTotalArea + "-" + totalArea.toTotalArea + " m2" : "Diện tích"}</span>
             </div>
             {

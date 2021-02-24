@@ -74,7 +74,7 @@ class Search extends Component {
     render () {
         return (
             <div className="position-relative search-component" ref={this.wrapperRef}>
-                <i className="ti-search"></i>
+                {/* <i className="ti-search"></i> */}
                 <input 
                     onFocus={this.onFocusInput} 
                     ref={this.inputSearch} 

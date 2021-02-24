@@ -159,7 +159,6 @@ class CategoryController extends Controller
                 'meta_title'        => $meta_title,
                 'meta_description'  => $meta_description,
                 'meta_content'      => $meta_content
-
             ];
             if($parent_id > 0){
                 $dataInsert['parent_id'] = $parent_id;

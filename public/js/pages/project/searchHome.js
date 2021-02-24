@@ -49585,9 +49585,7 @@ var Search = /*#__PURE__*/function (_Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "position-relative search-component",
         ref: this.wrapperRef
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "ti-search"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         onFocus: this.onFocusInput,
         ref: this.inputSearch,
         onKeyUp: this.filterValue,
@@ -49690,9 +49688,7 @@ var SearchAddress = function SearchAddress(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "position-relative search-component",
     ref: wrapperRef
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "ti-search"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     onChange: function onChange(e) {
       return _onChange(e, props);
     },
@@ -49938,9 +49934,7 @@ var SearchPrice = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "position-relative search-price-component",
         onClick: this.openDropdownBoxPrice
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "ti-search"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
         ref: this.titleRef
       }, "M\u1EE9c gi\xE1")), this.state.isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "bg-white"
@@ -50238,9 +50232,7 @@ var SearchTotalArea = function SearchTotalArea(props) {
     onClick: function onClick() {
       return setIsShow(true);
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "ti-search"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, totalArea.fromTotalArea || totalArea.toTotalArea ? totalArea.fromTotalArea + "-" + totalArea.toTotalArea + " m2" : "Diện tích")), isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, totalArea.fromTotalArea || totalArea.toTotalArea ? totalArea.fromTotalArea + "-" + totalArea.toTotalArea + " m2" : "Diện tích")), isShow && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "bg-white"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "d-flex justify-content-center p-2 border"
@@ -50732,9 +50724,7 @@ var FormSearchHome = /*#__PURE__*/function (_Component) {
         onClick: this.searchProject,
         className: "btn-home-search",
         type: "button"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
-        className: "ti-search"
-      }), " T\xECm ki\u1EBFm")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "T\xECm ki\u1EBFm")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "clear"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-12 timcode"
@@ -50892,7 +50882,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/BDS/resources/js/pages/project/searchHome.js */"./resources/js/pages/project/searchHome.js");
+module.exports = __webpack_require__(/*! /Users/phamdat/www/ERP/BDS/resources/js/pages/project/searchHome.js */"./resources/js/pages/project/searchHome.js");
 
 
 /***/ })

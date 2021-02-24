@@ -216,7 +216,8 @@ class FormSearchHome extends Component {
                         </div>
                         <div className="search-button">
                             <button onClick={this.searchProject} className="btn-home-search" type="button">
-                                <i className="ti-search"></i> Tìm kiếm
+                                {/* <i className="ti-search"></i>  */}
+                                Tìm kiếm
                             </button>
                         </div>
                         <div className="clear"></div>

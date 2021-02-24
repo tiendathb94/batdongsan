@@ -99,7 +99,7 @@ class SearchPrice extends Component {
         return (
             <div className="position-relative search-component" ref={this.wrapperRef}>
                 <div className="position-relative search-price-component" onClick={this.openDropdownBoxPrice}>
-                    <i className="ti-search"></i>
+                    {/* <i className="ti-search"></i> */}
                     <span ref={this.titleRef}>Mức giá</span>
                 </div>
                 {

@@ -27,12 +27,13 @@
     @if(count($banners)<1)
         @include('default.partials.no-data',['message'=>'Hiện tại hệ thống chưa có banner nào'])
     @else
-        <table class="table table-bordered fs-12 text-center">
+        <table width="100" class="table table-bordered fs-12 text-center">
             <thead>
             <tr class="bg-thead">
                 <th class=" d-md-table-cell">ID</th>
                 <th class=" d-md-table-cell">Tên</th>
                 <th class=" d-md-table-cell">Hình ảnh</th>
+                <th>Kích hoạt</th>
                 <th>Hành động</th>
             </tr>
             </thead>
@@ -42,11 +43,21 @@
                     <td class=" d-md-table-cell">{{$banner->id}}</td>
                     <td class=" d-md-table-cell">{{$banner->name}}</td>
                     <td class=" d-md-table-cell"  valign="middle" align="center">
-                        <img src="{{\Storage::url($banner->image)}}" alt="{{$banner->name}}" style="height:30%">
+                        <img src="{{\Storage::url($banner->image)}}" alt="{{$banner->name}}" style="width:50%">
                     </td>
-                    <td width='100'>
+                    <td>
+                    <div class="custom-control custom-switch">
+                        <input data-url="" type="checkbox" class="custom-control-input js-change-active" id="switch{{ $banner->id }}">
+                        <label class="custom-control-label" for="switch{{ $banner->id }}"></label>
+                    </div>
+                    </td>
+                    <td width="100">
+                        <a href="" style="cursor: pointer;">
+                            <span class="ti-pencil-alt"></span>
+                        </a>
+                        -
                         <a data-url="{{route('config.banner.delete',['id' => $banner->id])}}" class="delete-banner-button" style="cursor: pointer;">
-                            <span class="ti-trash"></span> Xóa
+                            <span class="ti-trash"></span>
                         </a>
                     </td>
                 </tr>

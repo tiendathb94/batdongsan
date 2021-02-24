@@ -24,7 +24,7 @@ const SearchAddress = (props) => {
     
     return (
         <div className="position-relative search-component" ref={wrapperRef}>
-            <i className="ti-search"></i>
+            {/* <i className="ti-search"></i> */}
             <input 
                 onChange={(e) => onChange(e,props)}
                 onFocus={onFocusInput} 

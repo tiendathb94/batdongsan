@@ -32682,7 +32682,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/BDS/resources/js/pages/investor/manage.js */"./resources/js/pages/investor/manage.js");
+module.exports = __webpack_require__(/*! /Users/phamdat/www/ERP/BDS/resources/js/pages/investor/manage.js */"./resources/js/pages/investor/manage.js");
 
 
 /***/ })
