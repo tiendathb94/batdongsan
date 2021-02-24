@@ -295,7 +295,7 @@
       </div>
       <div class="clear"></div>
    </div>
-   @if($listReals->count() > 0)
+   @if(count($listReals) > 0)
    <div class="home-center bg-grey" id="interestedProductsBinnovaContent">
       <div class="home-product product-4-you">
          <h2 class="fl">{{trans('lang.real_estate_for_you')}}</h2>
@@ -350,7 +350,7 @@
       </div>
    </div>
    @endif
-   @if($listBuy->count() > 0 OR $listSell->count() > 0)
+   @if(count($listBuy) > 0 OR count($listSell) > 0)
    <div class="home-center bg-grey" id="interestedProductsBinnovaContent">
       <div class="home-product product-4-you">
          <h2 class="fl">{{trans('lang.product_for_you')}}</h2>
@@ -584,7 +584,7 @@
                  setTimeout(callJQuery, 100)
          })();
       </script>
-      @if($hotnews->count() > 0)
+      @if(count($hotnews) > 0)
       <div class="home-hotnews m-b-30 m-t-38">
          <h2>{{trans('lang.hot_news')}}</h2>
          <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
@@ -724,7 +724,7 @@
              }
          })();
       </script>
-      @if($tuvanluat->count() > 0)
+      @if(count($tuvanluat) > 0)
       <div class="homemain home-social">
          <h2>{{ trans('lang.legal_advice')}}</h2>
          <div class="swiper-container">
