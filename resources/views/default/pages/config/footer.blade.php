@@ -30,7 +30,7 @@
             @endif
 
         </div>
-        <form action="{{ route('config.footer.update') }}" method="POST" class="row" enctype="multipart/form-data">
+        <form action="{{ route('config.footer') }}" method="POST" class="row" enctype="multipart/form-data">
             @csrf
             <div class="col-sm-12">
                 <div class="form-group">

@@ -35,7 +35,7 @@
             <div class="col-sm-12">
                 <div class="form-group">
                     <label for="title">Tiêu đề</label>
-                    <input type="text" name="name" value="{{$config->title}}" class="form-control" placeholder="Tiêu đề">
+                    <input type="text" name="title" value="{{$config->title}}" class="form-control" placeholder="Tiêu đề">
                 </div>
                 <div class="form-group">
                     <label for="name">Tên</label>
