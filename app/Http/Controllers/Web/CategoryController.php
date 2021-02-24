@@ -7,6 +7,7 @@ use App\Entities\Category;
 use App\Entities\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -108,5 +109,65 @@ class CategoryController extends Controller
             'name' => 'required',
             'slug' => 'required',
         ]);
+    }
+
+    public function list_categories(Request $request){
+        $keyword    = $request->get('keyword','');
+        $categories = Category::whereNull('parent_id')->with('children')->orderBy('created_at','DESC')->get();
+        return view('default.pages.category.list_category', ['categories' => $categories, 'keyword' => $keyword]);
+    }
+    public function edit_categories($id){
+        $categories = Category::where('destination_entity',Post::class)->whereNull('parent_id')->get();
+        $category = Category::find($id);
+        return view('default.pages.category.edit_category',['category' => $category, 'categories' => $categories]);
+    }
+    public function delete_categories($id){
+        $category = Category::find($id);
+        $category->delete(); 
+        return $category;
+    }
+    public function update_categories(Request $request,$id){
+        $category = Category::find($id);
+        $request_all = $request->only(['name','slug','meta_title','meta_keyword','meta_description','meta_content','parent_id']);
+        $category->update($request_all);
+        return redirect()->route('pages.category.list');
+    }
+    public function create_categories(){
+        $categories = Category::where('destination_entity',Post::class)->whereNull('parent_id')->get();
+        return view('default.pages.category.create_category',['categories' => $categories]);
+    }
+    public function store_categories(Request $request){
+        $request->flash();
+        $this->newsValidate();
+        $name               = $request->name;
+        $slug               = $request->slug;
+        $meta_keyword       = $request->meta_keyword;
+        $meta_description   = $request->meta_description;
+        $meta_title         = $request->meta_title;
+        $meta_content       = $request->meta_content;
+
+        $parent_id  = (int) $request->parent_id;
+        try {
+            $dataInsert = [
+                'name' => $name,
+                'slug' => $slug,
+                'thumbnail' => '',
+                'destination_entity' => Post::class,
+                'created_at'        => now(),
+                'updated_at'        => now(),
+                'meta_keyword'      => $meta_keyword,
+                'meta_title'        => $meta_title,
+                'meta_description'  => $meta_description,
+                'meta_content'      => $meta_content
+
+            ];
+            if($parent_id > 0){
+                $dataInsert['parent_id'] = $parent_id;
+            }
+            $category = Category::insert($dataInsert);
+            return  redirect()->route('pages.category.list')->with('success', 'Tạo danh mục thành công!');
+        } catch ( \Exception $e ) {
+            return back()->with('error', 'Thao tác thất bại!');
+        }
     }
 }

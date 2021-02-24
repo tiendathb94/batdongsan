@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('head')
-    <!-- <link rel="stylesheet" href="{{ asset('css/app.css') . '?m=' . filemtime('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('themify-icons/themify-icons.css') . '?m=' . filemtime('themify-icons/themify-icons.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/app.css') . '?m=' . filemtime('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/partials/navbar.css') . '?m=' . filemtime('css/partials/navbar.css') }}"> -->
     <!-- <link rel="stylesheet" href="{{ asset('css/partials/navbar.css') . '?m=' . filemtime('css/partials/navbar.css') }}">  -->
     @if((new \Jenssegers\Agent\Agent())->isDesktop())

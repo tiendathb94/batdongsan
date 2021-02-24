@@ -97,21 +97,30 @@ function personalMenuItemsDefinition()
                 ]
             ],
         ],
+        // [
+        //     'heading' => 'Quản lý hình thức',
+        //     'items' => [
+        //         [
+        //             'route_name' => 'pages.category.list_hinh_thuc',
+        //             'label' => 'Danh sách hình thức',
+        //         ],
+        //         [
+        //             'route_name' => 'pages.category.list_loai',
+        //             'label' => 'Danh sách loại',
+        //         ],
+        //         [
+        //             'route_name' => 'pages.category.create_loai',
+        //             'label' => 'Tạo hình thức,loại',
+        //         ]
+        //     ],
+        // ],
         [
-            'heading' => 'Quản lý hình thức',
+            'heading' => 'Quản lý danh mục',
             'items' => [
                 [
-                    'route_name' => 'pages.category.list_hinh_thuc',
-                    'label' => 'Danh sách hình thức',
+                    'route_name' => 'pages.category.list',
+                    'label' => 'Danh mục',
                 ],
-                [
-                    'route_name' => 'pages.category.list_loai',
-                    'label' => 'Danh sách loại',
-                ],
-                [
-                    'route_name' => 'pages.category.create_loai',
-                    'label' => 'Tạo hình thức,loại',
-                ]
             ],
         ],
         [
